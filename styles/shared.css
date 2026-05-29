@@ -3608,9 +3608,11 @@ section.hero .dev-chip {
 .ml-type { font-family: 'Roboto Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; flex-shrink: 0; }
 .ml-type--lesson { background: var(--off); color: var(--slatel); border: 1px solid var(--border); }
 .ml-type--exercise { background: rgba(79,153,144,.12); color: var(--teal); border: 1px solid rgba(79,153,144,.25); }
-.module-card-footer { padding: 16px 28px; border-top: 1px solid var(--border); }
+.module-card-footer { padding: 16px 28px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .module-cta { font-size: 14px; font-weight: 600; color: var(--teal); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: gap .2s; }
 .module-cta:hover { gap: 10px; }
+.module-slides { font-size: 12px; font-weight: 600; color: var(--slatel); text-decoration: none; letter-spacing: .04em; white-space: nowrap; transition: color .15s; display: flex; align-items: center; gap: 5px; }
+.module-slides:hover { color: var(--violet); }
 
 /* ══════════════════════════════════════════════════════════════════════════════
    PAGE TOC — right-side sticky navigation

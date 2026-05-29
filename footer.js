@@ -46,14 +46,13 @@
     footer.innerHTML =
       '<div class="nav-footer-copy">' +
         '<div class="nav-footer-kicker">Nimble Gravity × Acme Corp</div>' +
-        '<div class="nav-footer-title">AI-Powered SDLC Playbook</div>' +
-        '<div class="nav-footer-text">A shared project reference for requirements, design, dev handoff, development, and QA workflows, built to show how Nimble Gravity approaches the software delivery lifecycle with AI-native methods and clearer handoffs.</div>' +
-        '<div class="nav-footer-stages" aria-label="Project stages">' +
-          '<span class="nav-footer-stage">Product</span>' +
-          '<span class="nav-footer-stage">Design</span>' +
-          '<span class="nav-footer-stage">DevHandoff</span>' +
-          '<span class="nav-footer-stage">Development</span>' +
-          '<span class="nav-footer-stage">QA &amp; Testing</span>' +
+        '<div class="nav-footer-title">Claude Training · 6-Hour Workshop</div>' +
+        '<div class="nav-footer-text">Four modules covering how Claude thinks, Claude.ai power use, Claude Code fundamentals, and a capstone Loan Application Status Dashboard — built entirely with AI-assisted coding.</div>' +
+        '<div class="nav-footer-stages" aria-label="Workshop modules">' +
+          '<span class="nav-footer-stage">Module 1 · Foundations</span>' +
+          '<span class="nav-footer-stage">Module 2 · Claude.ai</span>' +
+          '<span class="nav-footer-stage">Module 3 · Claude Code</span>' +
+          '<span class="nav-footer-stage">Module 4 · Build It</span>' +
         '</div>' +
       '</div>' +
       '<a href="https://nimblegravity.com/" class="brand-link" target="_blank" rel="noopener noreferrer" aria-label="Nimble Gravity">' +
