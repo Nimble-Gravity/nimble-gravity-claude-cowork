@@ -6,6 +6,7 @@
       label: 'Module 1',
       subLabel: 'Foundations',
       color: '#4f9990',
+      slidesFile: 'module-1-slides.html',
       lessons: [
         { file: '01-how-claude-thinks.html',    title: 'Tokens & Context' },
         { file: '02-prompt-anatomy.html',        title: 'Prompt Anatomy' },
@@ -16,6 +17,7 @@
       label: 'Module 2',
       subLabel: 'Claude.ai',
       color: '#7dd3e8',
+      slidesFile: 'module-2-slides.html',
       lessons: [
         { file: '04-projects-and-memory.html',   title: 'Projects & Context' },
         { file: '05-artifacts-and-output.html',  title: 'Artifacts & Output' },
@@ -26,6 +28,7 @@
       label: 'Module 3',
       subLabel: 'Claude Code',
       color: '#c4b5fd',
+      slidesFile: 'module-3-slides.html',
       lessons: [
         { file: '07-setup-and-init.html',        title: 'Setup & /init' },
         { file: '08-explore-and-plan.html',      title: 'Explore & Plan' },
@@ -36,6 +39,7 @@
       label: 'Module 4',
       subLabel: 'Build It',
       color: '#f2c56b',
+      slidesFile: 'module-4-slides.html',
       lessons: [
         { file: '10-multi-file-editing.html',    title: 'Multi-File Editing' },
         { file: '11-git-and-review.html',        title: 'Git & PR Review' },
@@ -81,6 +85,11 @@
     '.tsb-lesson.tsb-active{color:var(--teal);border-left-color:var(--teal);background:var(--tealL);font-weight:600;}' +
     '.tsb-ex{font-size:10px;color:var(--amber);flex-shrink:0;}' +
 
+    // Slides link
+    '.tsb-slides{display:block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;' +
+    'color:var(--slatel);text-decoration:none;padding:0 16px 10px 28px;transition:color .15s;}' +
+    '.tsb-slides:hover{color:var(--teal);}' +
+
     // Divider
     '.tsb-div{height:1px;background:var(--border);margin:4px 12px;}' +
 
@@ -115,6 +124,14 @@
       '<span class="tsb-mod-dot" style="background:' + mod.color + '"></span>' +
       mod.label + ' <span style="font-weight:400;opacity:.7;">' + mod.subLabel + '</span>';
     group.appendChild(label);
+
+    if (mod.slidesFile) {
+      var slidesLink = document.createElement('a');
+      slidesLink.href = mod.slidesFile;
+      slidesLink.className = 'tsb-slides';
+      slidesLink.textContent = '⊞ Slides';
+      group.appendChild(slidesLink);
+    }
 
     mod.lessons.forEach(function (lesson) {
       var a = document.createElement('a');
