@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Governance for IT — Module 4</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+<script src="../../training-sidebar.js"></script>
+
+<!-- MODULE PROGRESS -->
+<div class="module-strip">
+  <span class="ms-label">Workshop</span>
+  <a href="01-what-is-cowork.html" class="ms-item upcoming"><span class="ms-num">1</span>Setup &amp; Foundations</a>
+  <span class="ms-arrow">›</span>
+  <a href="04-use-cases-by-industry.html" class="ms-item upcoming"><span class="ms-num">2</span>Use Cowork</a>
+  <span class="ms-arrow">›</span>
+  <a href="07-decompose-your-workflow.html" class="ms-item upcoming"><span class="ms-num">3</span>Build a Skill</a>
+  <span class="ms-arrow">›</span>
+  <a href="10-skills-to-plugins.html" class="ms-item active"><span class="ms-num">4</span>Plugins &amp; Rollout</a>
+</div>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Module 4 · Lesson 3 of 4</div>
+  <h1 class="title">Governance for <em>IT</em></h1>
+  <p class="subtitle">This is the page for the person who has to sign off — the IT and compliance owner. How Cowork is enabled and controlled, where its audit coverage stands today, and how the data is handled. Get this right and the rollout has air cover; get it wrong and it stalls in review.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot" style="background:var(--amber)"></div>
+    Plugins &amp; Rollout · ~20 min
+  </div>
+</div>
+
+<!-- ENABLE & MANAGE -->
+<div class="section" id="manage">
+  <div class="sec-eyebrow">01 — Enable and manage it</div>
+  <h2 class="sec-title">Turn it on, and keep it under <em>control</em></h2>
+  <p class="sec-sub">Cowork is an admin-enabled capability, not a free-for-all. IT decides who gets it, ties it to identity, and pushes policy to managed devices.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Enable org-wide</div>
+      <div class="bp-body">Turn Cowork on under Organization settings, then Capabilities. It's off until you enable it, so nothing is exposed before you decide to.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Tie it to identity</div>
+      <div class="bp-body">Manage access with SSO and SCIM, so accounts follow your directory and deprovisioning a user removes their access too.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Push desktop policy</div>
+      <div class="bp-body">Use MDM — Jamf, Kandji, or Intune — to deploy and configure the desktop app on managed machines instead of relying on each user.</div>
+    </div>
+  </div>
+</div>
+
+<!-- THE AUDIT GAP -->
+<div class="section section-dark" id="audit">
+  <div class="sec-eyebrow on-dark">02 — The audit gap, and how to route around it</div>
+  <h2 class="sec-title on-dark">The one fact that decides regulated <em>workloads</em></h2>
+  <p class="sec-sub on-dark">This is the deciding point for a regulated client, so be precise about it. As of June 2026, Claude Cowork's activity isn't centrally auditable — and Copilot Cowork is exactly how you close that gap.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">The gap — Claude Cowork</div>
+      <h3>Activity isn't in the audit logs</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">As of June 2026, Claude Cowork activity is not in Anthropic's Compliance API or audit logs, and history lives locally on the user's machine — it can't be centrally managed or exported. Anthropic itself steers regulated workloads away from it.</p>
+      <div class="dev-quote">Great for personal productivity; not for compliance-bound work.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">The close — Copilot Cowork</div>
+      <h3>In-tenant, Purview-audited</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Same engine, run inside your Microsoft 365 tenant. It inherits Purview audit and Enterprise Data Protection, so regulated activity is logged where your compliance team already looks. Route compliance-bound work here.</p>
+      <div class="dev-quote">Lead with Claude Cowork; send regulated work to Copilot Cowork.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DATA & RETENTION -->
+<div class="section" id="data">
+  <div class="sec-eyebrow">03 — Data and retention</div>
+  <h2 class="sec-title">What's kept, for how long, and what <em>isn't</em></h2>
+  <p class="sec-sub">The questions a CISO asks first. The commercial answer is reassuring, with one limit worth stating plainly so it doesn't surface later as a surprise.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">No training, 30-day retention</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">On commercial plans — Team, Enterprise, and API — Anthropic doesn't train on your data by default, and retention is 30 days.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">ZDR has a boundary</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Zero Data Retention is available for the API and Claude Code Enterprise, but not for the Team or Enterprise Cowork interface. State that limit up front for regulated workloads.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">🛡️</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">What to put in front of your CISO</div>
+      <p>One page: Cowork is admin-enabled, identity-bound through SSO/SCIM, and MDM-managed; commercial data isn't trained on and is kept 30 days; and regulated workloads run on Copilot Cowork for Purview-grade audit. That's the routing decision the capstone asks you to make.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NEXT -->
+<div class="section" id="next">
+  <div class="sec-eyebrow">Up next</div>
+  <h2 class="sec-title">Lesson 4: Governance &amp; Adoption (Capstone)</h2>
+  <p class="sec-sub">You've got the governance picture. The capstone brings it together with adoption measurement and a phased rollout plan — the deliverable a sponsor can act on.</p>
+  <a href="12-governance-and-adoption.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#3a2a06;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

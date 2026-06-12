@@ -13,6 +13,7 @@
 <script src="../../footer.js"></script>
 <script src="../../nav.js"></script>
 <script src="../../training-sidebar.js"></script>
+<script src="../../interactive.js"></script>
 
 <!-- MODULE PROGRESS -->
 <div class="module-strip">
@@ -27,7 +28,7 @@
 </div>
 
 <div class="page-header" id="intro">
-  <div class="eyebrow">Module 3 · Lesson 3 of 3 · Exercise ✦</div>
+  <div class="eyebrow">Module 3 · Lesson 4 of 4 · Exercise ✦</div>
   <h1 class="title">Build a Skill <em>Lab</em></h1>
   <p class="subtitle">Ship your first real skill. Take the workflow you mapped in Lesson 1 and run Anthropic's skill-creator loop: capture intent, draft, test against your evals, tune the description, and package a <code>.skill</code> you could share.</p>
   <div class="header-phase">
@@ -36,9 +37,69 @@
   </div>
 </div>
 
+<!-- DECOMPOSE WITH THE SKILL -->
+<div class="section" id="decompose">
+  <div class="sec-eyebrow">01 — Decompose with the skill</div>
+  <h2 class="sec-title">Let the skill <em>interview</em> you first</h2>
+  <p class="sec-sub">Before you draft anything, run the workflow-decomposition skill. It walks you through the steps, the data sources, and what good and bad output look like, then offers to draft your workflow as a skill — turning your Lesson 1 canvas into a blueprint you can build from. Copy it into a fresh session, or download it.</p>
+
+  <div class="code-wrap" style="margin-top:28px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">workflow-decomposition / SKILL.md</span>
+      <button class="copy-btn" onclick="copyBlock('skill-decompose', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="skill-decompose">---
+name: workflow-decomposition
+description: Interviews a knowledge worker about a repetitive workflow — the steps, the data sources, and what good versus bad output looks like — then summarizes it as a blueprint and offers to draft it as a skill. Use when someone wants to turn a recurring task into a reusable Cowork skill, asks to "decompose my workflow", "break down this process", "map out how I do X", or is staring at a blank SKILL.md and does not know where to start.
+---
+
+# Workflow Decomposition
+
+Help the user turn a fuzzy, in-their-head workflow into a clear blueprint, then offer
+to draft it as a skill. The interview does the teaching: by answering, the user learns
+what a skill needs before they ever write one.
+
+## The interview
+
+Work one slice at a time. Ask, reflect, then go deeper.
+
+1. The job. What is this workflow, in one sentence? When do you reach for it?
+2. The trigger. What words or situation should make Cowork pick this up later?
+   (This becomes the skill's description — capture it precisely.)
+3. The steps. "What do you do first? Then what? Then what?" Walk the whole sequence.
+4. The data. For each step, what does it read or need — which folder, file, or system?
+5. Good output. Describe one example of a great result. What makes it great?
+6. Bad output. What does a wrong or weak result look like? What must never happen?
+
+## Summarize the blueprint
+
+Play the workflow back: job and trigger (one line each), numbered steps with the data
+source on each, the definition of done, and the guardrails. Ask the user to correct it.
+
+## Offer to draft the skill
+
+Once the blueprint is confirmed, ask: "Would you like me to draft this as a skill?"
+If yes, write a tight third-person description from the job and trigger, turn the steps
+into the body (under 500 lines, references one level deep), fold in the good and bad
+examples, and hand off to the skill-creator loop for evals — evals before docs.
+
+Don't over-build. If a step is genuinely one instruction, leave it as one line.</pre>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="../../skills/workflow-decomposition/SKILL.md" download style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--blueD);text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600;font-size:14px;">Download SKILL.md ↓</a>
+    <a href="../../skills/workflow-decomposition/" style="display:inline-flex;align-items:center;gap:8px;color:var(--blueD);text-decoration:none;padding:10px 4px;font-weight:600;font-size:14px;">Browse the skill folder →</a>
+  </div>
+</div>
+
 <!-- CAPTURE & DRAFT -->
 <div class="section" id="draft">
-  <div class="sec-eyebrow">01 — Capture intent and draft</div>
+  <div class="sec-eyebrow">02 — Capture intent and draft</div>
   <h2 class="sec-title">Begin with the <em>trigger</em></h2>
   <p class="sec-sub">The skill-creator opens by capturing intent, and the question that matters most is when the skill should fire. Your answer to that drives the description.</p>
 
@@ -56,7 +117,7 @@
 
 <!-- TEST & IMPROVE -->
 <div class="section section-dark" id="test">
-  <div class="sec-eyebrow on-dark">02 — Test and improve</div>
+  <div class="sec-eyebrow on-dark">03 — Test and improve</div>
   <h2 class="sec-title on-dark">Run the skill against a <em>baseline</em></h2>
   <p class="sec-sub on-dark">Write two or three realistic test prompts, run them with the skill and without it, and grade the difference. Then tune the description so the skill actually triggers.</p>
 
@@ -78,7 +139,7 @@
 
 <!-- PACKAGE -->
 <div class="section" id="package">
-  <div class="sec-eyebrow">03 — Package and share</div>
+  <div class="sec-eyebrow">04 — Package and share</div>
   <h2 class="sec-title">Produce a <code>.skill</code>, then take it <em>home</em></h2>
   <p class="sec-sub">Package the skill, understand how sharing works, and leave with homework: build the skill for a real workflow of your own.</p>
 
@@ -109,6 +170,11 @@
   </div>
 </div>
 
+<!-- KNOWLEDGE CHECK -->
+<div class="section">
+  <div class="ix-quiz" data-ix-quiz="m3" data-ix-pass="3"></div>
+</div>
+
 <!-- NEXT -->
 <div class="section" id="next">
   <div class="sec-eyebrow">Up next</div>
@@ -118,5 +184,16 @@
 </div>
 
 <div class="page-footer"></div>
+<script>
+function copyBlock(id, btn) {
+  var pre = document.getElementById(id);
+  if (!pre || !navigator.clipboard) return;
+  navigator.clipboard.writeText(pre.innerText).then(function () {
+    var prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = prev; }, 2000);
+  });
+}
+</script>
 </body>
 </html>

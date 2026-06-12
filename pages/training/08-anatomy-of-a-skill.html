@@ -27,7 +27,7 @@
 </div>
 
 <div class="page-header" id="intro">
-  <div class="eyebrow">Module 3 · Lesson 2 of 3</div>
+  <div class="eyebrow">Module 3 · Lesson 2 of 4</div>
   <h1 class="title">Anatomy of a <em>Skill</em></h1>
   <p class="subtitle">A skill is a folder with a <code>SKILL.md</code> file: YAML frontmatter and a Markdown body, on the open Agent Skills standard. Anthropic has clear opinions about how to write one. Follow them and your skills fire when they should and stay easy to maintain.</p>
   <div class="header-phase">
@@ -109,14 +109,105 @@
   </div>
 </div>
 
+<!-- WORKED EXAMPLE -->
+<div class="section section-dark" id="example">
+  <div class="sec-eyebrow on-dark">04 — A worked example</div>
+  <h2 class="sec-title on-dark">A small, finished skill: <em>memo generation</em></h2>
+  <p class="sec-sub on-dark">Read a real one against the rules above. The description is keyword-rich and third person, the body is well under 500 lines, it carries a good-versus-bad example and a guardrails block, and it points one level deep at a format file. Analysts lose hours to memos, so the payoff is immediate.</p>
+
+  <div class="code-wrap" style="margin-top:28px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">memo-generation / SKILL.md</span>
+      <button class="copy-btn" onclick="copyBlock('skill-memo', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="skill-memo">---
+name: memo-generation
+description: Drafts a structured business memo from rough source material — meeting notes, an email thread, or a few bullet points — in the team's standard format and voice, leaving a clear draft for a person to review and sign off. Use when someone asks to "write a memo", "turn these notes into a memo", "draft a summary memo", or "put this in memo form", especially for recurring internal or client-facing memos in regulated, document-heavy work.
+---
+
+# Memo Generation
+
+Turn rough input into a clean, well-structured memo draft. Analysts and associates lose
+hours to this; the structure rarely changes, so it is an ideal first skill. The output is
+always a draft for a human to review — never a final, never sent automatically.
+
+## How to draft
+
+1. Read everything first. Understand the whole input before you summarize.
+2. Lead with the bottom line. The first sentence states the conclusion or the ask.
+3. Use the standard sections: Purpose, Background, Key Points, Recommendation / Next Steps.
+   If no format is given, use reference/memo-format.md and say you used the default.
+4. Cite the source for any figure or claim — name the file, email, or note.
+5. Flag gaps, don't fill them. Unsupported section -> [NEEDS INPUT: ...].
+6. Match the house voice if a voice-profile exists; otherwise keep it plain and tight.
+
+## Good vs. bad output
+
+Good — bottom line first; every claim traceable to a source; gaps flagged; one page;
+ready for a reviewer to approve with light edits.
+
+Bad — buries the ask in paragraph three; invents a number that isn't in the source;
+fills an empty section with filler; reads like a chat transcript; needs a full rewrite.
+
+## Guardrails
+
+- Never present the memo as final or send it anywhere. It is a draft for review.
+- Never fabricate figures, names, or quotes. Unknown -> [NEEDS INPUT: ...].
+- Keep it to one page unless the user asks for more.</pre>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+    <a href="../../skills/memo-generation/SKILL.md" download class="copy-btn--outline" style="text-decoration:none;">Download SKILL.md ↓</a>
+    <a href="../../skills/memo-generation/" style="display:inline-flex;align-items:center;gap:8px;color:var(--mint-on-dark);text-decoration:none;padding:10px 4px;font-weight:600;font-size:14px;">Browse the skill folder →</a>
+  </div>
+</div>
+
+<!-- GOOD VS BAD -->
+<div class="section" id="goodbad">
+  <div class="sec-eyebrow">05 — Good skill vs. bad skill</div>
+  <h2 class="sec-title">The same rules, side by <em>side</em></h2>
+  <p class="sec-sub">Held against Anthropic's standards, the difference between a skill that fires reliably and one that doesn't is usually visible in the first ten lines. The memo skill above is the good column.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Good</div>
+      <h3>Triggers, and stays out of the way</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Third-person description packed with trigger words; a body under 500 lines; one clear good-and-bad example; a default with an escape hatch; detail pushed one level deep into a reference file.</p>
+      <div class="dev-quote">A fresh Claude picks it up and uses it correctly, cold.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Bad</div>
+      <h3>Under-triggers, over-explains</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">First-person or vague description that never fires; a 900-line body of ALL-CAPS rules; no examples; nested references three deep; no evals, so nobody knows whether it works.</p>
+      <div class="dev-quote">It reads like documentation nobody tested.</div>
+    </div>
+  </div>
+</div>
+
 <!-- NEXT -->
 <div class="section" id="next">
   <div class="sec-eyebrow">Up next</div>
-  <h2 class="sec-title">Lesson 3: Build a Skill Lab</h2>
-  <p class="sec-sub">Now you ship one. You'll run Anthropic's skill-creator loop: capture intent, draft, test against your evals, tune the description, and package a working <code>.skill</code>.</p>
-  <a href="09-build-a-skill-lab.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--blueD);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
+  <h2 class="sec-title">Lesson 3: Make It a Skill</h2>
+  <p class="sec-sub">You know what good looks like. Next, the fastest way to get there: paste a working prompt and ask Claude to turn it into a skill, then harden it with the skill-creator loop.</p>
+  <a href="14-make-it-a-skill.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--blueD);color:var(--white);text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;margin-top:8px;">Next Lesson →</a>
 </div>
 
 <div class="page-footer"></div>
+<script>
+function copyBlock(id, btn) {
+  var pre = document.getElementById(id);
+  if (!pre || !navigator.clipboard) return;
+  navigator.clipboard.writeText(pre.innerText).then(function () {
+    var prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = prev; }, 2000);
+  });
+}
+</script>
 </body>
 </html>

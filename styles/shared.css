@@ -725,6 +725,33 @@ section.section.dark .section-sub, .section.dark .section-sub { color: var(--sla
 .copy-btn--outline:hover { border-color: var(--mint); color: var(--mint); }
 .copy-btn--outline.copied { border-color: var(--teal); color: var(--teal); }
 
+/* --- GIF walkthrough placeholder (see assets/gifs/) ---
+   The <img> shows the recorded GIF once it exists; until then onerror reveals
+   the dashed placeholder caption, so a missing file never shows a broken icon. */
+.gif-figure { margin: 28px 0 0; }
+.gif-figure img {
+  display: block;
+  width: 100%;
+  max-width: 680px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.gif-figure figcaption {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 120px;
+  max-width: 680px;
+  padding: 16px;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: var(--off);
+  color: var(--slatel);
+  font-size: 14px;
+  text-align: center;
+}
+
 /* ══════════════════════════════════════════════════════════════════════════════
    INDEX PAGE — craft cards, pipeline strip, multiplier row, principles
    ══════════════════════════════════════════════════════════════════════════════ */

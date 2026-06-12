@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Discovery Checklist — Cowork Enablement</title>
+<link rel="stylesheet" href="../../styles/shared.css"/>
+<style>
+/* Page-specific styles go here. This scaffold relies entirely on shared.css. */
+</style>
+</head>
+<body>
+<script src="../../footer.js"></script>
+<script src="../../nav.js"></script>
+
+<div class="page-header" id="intro">
+  <div class="eyebrow">Nimble Gravity · Pre-Engagement</div>
+  <h1 class="title">Discovery <em>Checklist</em></h1>
+  <p class="subtitle">A short session, run with the client the week before the workshop, that decides how the program is tailored. Its answers fill the client-swappable slots: the industry use cases, the lab scenario, the top-5 list, and which skills to skin. This is the generic template — capture the answers, then customize on a client branch.</p>
+  <div class="header-phase">
+    <div class="header-phase-dot"></div>
+    1–2 hours · facilitator + client sponsor
+  </div>
+</div>
+
+<!-- AUDIENCE -->
+<div class="section" id="audience">
+  <div class="sec-eyebrow">01 — Audience &amp; maturity</div>
+  <h2 class="sec-title">Who is this for, and where are they <em>starting</em>?</h2>
+  <p class="sec-sub">The audience and its maturity set the level of every lesson and lab. Get specific — "the secondaries analysts" beats "the investment team."</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Who is rolling out — team or org?</div>
+      <div class="bp-body">A single team's pilot and an org-wide rollout are different engagements. Name the first cohort and who sponsors it.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">What do those people do all day?</div>
+      <div class="bp-body">The real, repetitive, document-heavy tasks. This is the raw material for the use cases and the labs.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">What's their AI maturity?</div>
+      <div class="bp-body">Curious, exploring, piloting, scaling, or governed? This sets the pace and seeds the opening maturity poll.</div>
+    </div>
+  </div>
+</div>
+
+<!-- STACK -->
+<div class="section section-dark" id="stack">
+  <div class="sec-eyebrow on-dark">02 — Stack &amp; licenses</div>
+  <h2 class="sec-title on-dark">Which surfaces, and what's <em>licensed</em>?</h2>
+  <p class="sec-sub on-dark">The stack decides the setup track and the connector walkthroughs; the licenses decide which products you can actually demo on day one.</p>
+
+  <div class="dev-grid-2" style="margin-top:28px;">
+    <div class="dev-card">
+      <div class="dev-kicker">Stack</div>
+      <h3>Microsoft, Google, or mixed?</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">A Microsoft shop gets the M365 connector track and the Copilot Cowork routing story. A Google or mixed shop forks the setup track. Local-files-only is always a safe default if connectors aren't approved in time.</p>
+      <div class="dev-quote">Plan a local-files-first lab path in case connectors lag.</div>
+    </div>
+    <div class="dev-card">
+      <div class="dev-kicker">Licenses</div>
+      <h3>Which Claude products?</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Claude Code, Claude Cowork, Copilot Cowork, API / Foundry — confirm what's actually licensed and provisioned, and whether SSO-only sign-in will block the skill-creator optimizer.</p>
+      <div class="dev-quote">Confirm; don't assume. The demo depends on it.</div>
+    </div>
+  </div>
+</div>
+
+<!-- USE CASES -->
+<div class="section" id="usecases">
+  <div class="sec-eyebrow">03 — Use cases &amp; champions</div>
+  <h2 class="sec-title">The first wins, and who will <em>carry</em> them</h2>
+  <p class="sec-sub">Three to five candidate use cases give the labs something real to chew on, and two or three champions per team carry the momentum after you leave.</p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">3–5 candidate use cases</div>
+      <div class="bp-body">Repetitive, document-heavy, ending in a deliverable. These seed the top-5 list and the lab scenario.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Likely champions</div>
+      <div class="bp-body">Who's already curious and respected on the team? They become the office-hours regulars and the internal owners.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">Regulated boundaries</div>
+      <div class="bp-body">Which work is compliance-bound? That work routes to Copilot Cowork — confirm it early so the governance story is right.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IT FEEDS -->
+<div class="section section--off" id="feeds">
+  <div class="sec-eyebrow">04 — What the answers feed</div>
+  <h2 class="sec-title">Discovery fills the swappable <em>slots</em></h2>
+  <p class="sec-sub">Each answer maps to a place in the site a client branch customizes. The mechanism is documented in <code>CLIENT-CUSTOMIZATION.md</code>; the slots are marked with <code>data-client-slot</code>.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Industry use cases &amp; lab scenario</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The candidate use cases re-cast Module 2's "Use Cases by Industry" and the canonical lab scenario to the client's verticals.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Skills &amp; assets</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The memo skill gets skinned to the client's format and letterhead; the stack answer decides which connector GIFs to record.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">🧭</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Generic template — customize on a branch</div>
+      <p>This page ships generic on purpose. Capture the client's answers here, then make the edits only inside the marked slots on a <code>client-&lt;name&gt;</code> branch. See <code>CLIENT-CUSTOMIZATION.md</code> for the convention and the slot list.</p>
+    </div>
+  </div>
+</div>
+
+<div class="page-footer"></div>
+</body>
+</html>

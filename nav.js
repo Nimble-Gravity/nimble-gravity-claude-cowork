@@ -30,15 +30,17 @@
       subLabel: 'Use Cowork',
       color: '#8c47e4',
       navColor: '#c4b5fd',
-      filePrefix: ['04-', '05-', '06-'],
+      filePrefix: ['04-', '05-', '13-', '06-'],
       pages: [
         '04-use-cases-by-industry',
         '05-working-effectively',
+        '13-folder-access-walkthrough',
         '06-use-cowork-lab'
       ],
       labels: [
         'By Industry',
         'Work Effectively',
+        'Folder Access',
         'Use Cowork Lab'
       ]
     },
@@ -49,15 +51,17 @@
       subLabel: 'Build a Skill',
       color: '#2b6880',
       navColor: '#7dd3e8',
-      filePrefix: ['07-', '08-', '09-'],
+      filePrefix: ['07-', '08-', '14-', '09-'],
       pages: [
         '07-decompose-your-workflow',
         '08-anatomy-of-a-skill',
+        '14-make-it-a-skill',
         '09-build-a-skill-lab'
       ],
       labels: [
         'Decompose',
         'Skill Anatomy',
+        'Make It a Skill',
         'Build a Skill Lab'
       ]
     },
@@ -68,15 +72,17 @@
       subLabel: 'Plugins & Rollout',
       color: '#e8a317',
       navColor: '#f2c56b',
-      filePrefix: ['10-', '11-', '12-'],
+      filePrefix: ['10-', '11-', '15-', '12-'],
       pages: [
         '10-skills-to-plugins',
         '11-deploy-to-your-team',
+        '15-governance-for-it',
         '12-governance-and-adoption'
       ],
       labels: [
         'Skills → Plugins',
         'Deploy to Team',
+        'Governance for IT',
         'Governance & Adoption'
       ]
     }
@@ -134,6 +140,10 @@
     '.nav-home-label{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#b1adc4;white-space:nowrap;transition:color .2s;}' +
     '.nav-home:hover .nav-home-label,.nav-home:hover .nav-home-icon{color:#ffffff;}' +
     '.nav-home.active .nav-home-label,.nav-home.active .nav-home-icon{color:#fff;}' +
+    // Nimble Gravity wordmark (restored brand mark in the home link)
+    '.nav-home-logo{display:inline-flex;align-items:center;color:#e9e6f5;transition:color .2s;flex-shrink:0;}' +
+    '.nav-home-logo .footer-logo,.nav-home-logo .ng-wordmark{height:22px;width:auto;filter:none;}' +
+    '.nav-home:hover .nav-home-logo,.nav-home.active .nav-home-logo{color:#fff;}' +
 
     // Vertical divider
     '.nav-vdivider{width:1px;background:rgba(255,255,255,.1);align-self:stretch;flex-shrink:0;margin:0 4px;}' +
@@ -290,8 +300,13 @@
   var homeEl = document.createElement('a');
   homeEl.href = root + 'index.html';
   homeEl.className = 'nav-home' + (isHome ? ' active' : '');
+  // Restore the Nimble Gravity wordmark (single SVG source from footer.js); fall
+  // back to the academic-cap glyph if footer.js hasn't loaded for some reason.
+  var brandMark = (window.SDLCFooter && window.SDLCFooter.wordmarkSvg)
+    ? '<span class="nav-home-logo" aria-hidden="true">' + window.SDLCFooter.wordmarkSvg + '</span>'
+    : '<i class="nav-home-icon iconoir-academic-cap" aria-hidden="true"></i>';
   homeEl.innerHTML =
-    '<i class="nav-home-icon iconoir-academic-cap" aria-hidden="true"></i>' +
+    brandMark +
     '<span class="nav-home-label">Cowork Workshop</span>';
   topRow.appendChild(homeEl);
 

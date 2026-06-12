@@ -62,9 +62,40 @@
   </div>
 </div>
 
+<!-- CONNECT DATA SOURCES -->
+<div class="section" id="connectors">
+  <div class="sec-eyebrow">02 — Connect your data sources</div>
+  <h2 class="sec-title">Connectors are part of <em>setup</em>, not an afterthought</h2>
+  <p class="sec-sub">Cowork is far more useful when it can see your real work. Connect your data sources before the interview so it can pre-fill from your email, calendar, and files instead of starting cold.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Microsoft 365 shops</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Turn on the M365 connector. An admin grants consent once; it then connects with delegated permissions, so Cowork sees only what you can see, and Graph calls are logged in your M365 audit log. In Cowork, open Settings, then Connectors, add Microsoft 365, and approve the scopes.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Google and other shops</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Not on Microsoft? Connect Google Drive, Gmail, and Calendar the same way, from Settings, then Connectors. Local-files-only is also fine: grant a folder and skip connectors for now, then add them as new tasks call for it.</p>
+    </div>
+  </div>
+
+  <figure class="gif-figure">
+    <img src="../../assets/gifs/connector-consent.gif" alt="Approving the Microsoft 365 connector consent flow" loading="lazy" data-client-slot="gif-connector-consent" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+    <figcaption>▶ GIF walkthrough — M365 connector consent (recording pending)</figcaption>
+  </figure>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">🔌</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Least privilege from the start</div>
+      <p>Connectors reach your services through Anthropic's cloud with delegated permissions scoped to you. Connect what the work needs and no more, and add connectors later as new tasks call for them.</p>
+    </div>
+  </div>
+</div>
+
 <!-- INSTALL THE SKILL -->
 <div class="section section-dark" id="install">
-  <div class="sec-eyebrow on-dark">02 — Installing the co-setup skill</div>
+  <div class="sec-eyebrow on-dark">03 — Installing the co-setup skill</div>
   <h2 class="sec-title on-dark">The same folder works on <em>both</em> products</h2>
   <p class="sec-sub on-dark">The <code>cowork-cosetup</code> folder holds a <code>SKILL.md</code> and a short guide, and it's identical for Claude Cowork and Copilot Cowork. What changes between them is where your skills folder lives and which connectors are on. Get the folder first, since it's usually shared with you in OneDrive or Teams, then follow your track.</p>
 
@@ -92,9 +123,69 @@
   </div>
 </div>
 
+<!-- THE SKILL ITSELF -->
+<div class="section" id="cosetup-skill">
+  <div class="sec-eyebrow">04 — The co-setup skill</div>
+  <h2 class="sec-title">Copy the skill, paste it into <em>Cowork</em></h2>
+  <p class="sec-sub">The quickest way to install <code>cowork-cosetup</code> is to copy the skill below, paste it into a fresh Cowork session, and ask Claude to "make this a skill." Downloading the file is the secondary path, for re-runs or for setting someone else up.</p>
+
+  <div class="code-wrap" style="margin-top:28px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">cowork-cosetup / SKILL.md</span>
+      <button class="copy-btn" onclick="copyBlock('skill-cosetup', this)">Copy</button>
+    </div>
+    <div class="code-body">
+<pre id="skill-cosetup">---
+name: cowork-cosetup
+description: Interviews a new Cowork user and writes their personalization files — copilot-instructions.md plus an about-me/ folder — so Cowork knows their role, voice, priorities, and team from the first session. Use at first-time setup, when onboarding someone to Claude Cowork or Copilot Cowork, when a user asks to "set me up", "personalize Cowork", or run "co-setup", or whenever Cowork is giving generic, role-blind answers that ignore who the user is.
+---
+
+# Cowork Co-Setup
+
+Run a short guided interview, then write the personalization files that make Cowork
+play back who the user is and tailor its help to their actual job.
+
+## What you produce
+
+copilot-instructions.md      (read at the start of every session)
+about-me/about-me.md         (role, responsibilities, priorities, tools)
+about-me/voice-profile.md    (how the user writes and wants drafts to sound)
+about-me/writing-rules.md    (do / don't rules for any drafted output)
+about-me/team.md             (living: who they work with and how)
+about-me/memory.md           (living: durable facts worth remembering)
+
+This folder is identical for Claude Cowork and Copilot Cowork. Only where it lives
+differs: Track A (Claude) = the personal skills/instructions location; Track B
+(Copilot) = Documents/Cowork in OneDrive. These are context files, not skills.
+
+## The interview
+
+1. Pre-fill, don't interrogate. If an M365 connector is available, read name, role,
+   and team first and confirm them rather than asking cold.
+2. Adapt to the role — Delivery, Operations, Sales, Enablement, or Leadership.
+3. Keep it to 20–40 minutes. Mark skips with [FILL IN]; never invent an answer.
+4. Read it back before writing, so the user can correct it.
+
+## After setup
+
+Start a fresh session and run two prompts: "Recap what you know about me." and
+"Given who I am, what can you help me with?" If the playback is generic, open the
+relevant file, fix it, and re-run.</pre>
+    </div>
+  </div>
+
+  <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="../../skills/cowork-cosetup/SKILL.md" download style="display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);color:var(--teal);text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600;font-size:14px;">Download SKILL.md ↓</a>
+    <a href="../../skills/cowork-cosetup/" style="display:inline-flex;align-items:center;gap:8px;color:var(--teal);text-decoration:none;padding:10px 4px;font-weight:600;font-size:14px;">Browse the skill folder →</a>
+  </div>
+</div>
+
 <!-- INSIDE THE INTERVIEW -->
 <div class="section" id="interview">
-  <div class="sec-eyebrow">03 — How the interview works</div>
+  <div class="sec-eyebrow">05 — How the interview works</div>
   <h2 class="sec-title">It reads first, then <em>asks</em></h2>
   <p class="sec-sub">The interview is built to go quickly. It looks at your recent work before it asks anything, so most questions arrive with an answer already filled in for you to confirm or change.</p>
 
@@ -134,5 +225,16 @@
 </div>
 
 <div class="page-footer"></div>
+<script>
+function copyBlock(id, btn) {
+  var pre = document.getElementById(id);
+  if (!pre || !navigator.clipboard) return;
+  navigator.clipboard.writeText(pre.innerText).then(function () {
+    var prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = prev; }, 2000);
+  });
+}
+</script>
 </body>
 </html>
