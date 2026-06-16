@@ -5,6 +5,27 @@ microsite. It branches from the generic template/product base; only the marked
 client-swappable regions are changed here. See `CLIENT-CUSTOMIZATION.md` for the
 mechanism and the full slot list.
 
+## Scope: Claude Cowork only
+
+This branch is **Claude Cowork only** — all Copilot Cowork context has been stripped per
+the engagement decision, and everything is rooted in Claude Cowork process and Anthropic
+best practices. Specifically:
+
+- Removed the "two products / one engine" framing; the workshop teaches Claude Cowork
+  exclusively (lesson 01 now covers what it's built on — the Claude Code engine).
+- Setup is a single Claude Cowork track (no Track A / Track B). The co-setup skill writes
+  **`cowork-instructions.md`** (renamed from `copilot-instructions.md`) — **verify the exact
+  filename the product expects** during setup, since this is our naming choice.
+- Governance is Claude-only: the June-2026 audit-coverage gap is now **managed** (least
+  privilege, approvals on, the admin dashboard + Analytics API, and re-verify each cycle)
+  rather than routed to Copilot Cowork. Workloads needing zero-retention or centralized
+  audit use Anthropic's audited surfaces (the API or Claude Code Enterprise).
+- Skill/plugin portability is **Claude Cowork ↔ Claude Code** (no M365 / MOS3 conversion).
+
+The M365 *connector* is kept — that's Claude Cowork connecting to Microsoft 365 data, a
+Claude Cowork capability, not the Copilot Cowork product. Re-verify the audit-coverage gap
+each cohort; it's date-sensitive and Anthropic is closing it.
+
 ## What's customized (generic banking content)
 
 | Where | Slot / region | Axos content |

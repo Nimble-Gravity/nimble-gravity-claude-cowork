@@ -1,6 +1,6 @@
 ---
 name: cowork-cosetup
-description: Interviews a new Cowork user and writes their personalization files — copilot-instructions.md plus an about-me/ folder — so Cowork knows their role, voice, priorities, and team from the first session. Use at first-time setup, when onboarding someone to Claude Cowork or Copilot Cowork, when a user asks to "set me up", "personalize Cowork", or run "co-setup", or whenever Cowork is giving generic, role-blind answers that ignore who the user is.
+description: Interviews a new Claude Cowork user and writes their personalization files — cowork-instructions.md plus an about-me/ folder — so Cowork knows their role, voice, priorities, and team from the first session. Use at first-time setup, when onboarding someone to Claude Cowork, when a user asks to "set me up", "personalize Cowork", or run "co-setup", or whenever Cowork is giving generic, role-blind answers that ignore who the user is.
 ---
 
 # Cowork Co-Setup
@@ -12,16 +12,16 @@ skill produces them in 20–40 minutes.
 
 ## When to run
 
-- A fresh Cowork user with no `copilot-instructions.md` yet (the common case).
+- A fresh Cowork user with no `cowork-instructions.md` yet (the common case).
 - A returning user who wants to refresh their profile after a role change.
 
-Do **not** silently overwrite an existing profile — if `copilot-instructions.md`
+Do **not** silently overwrite an existing profile — if `cowork-instructions.md`
 already exists, summarize what's there and ask before changing it.
 
 ## What you produce
 
 ```
-copilot-instructions.md      ← entry point, read at the start of every session
+cowork-instructions.md      ← entry point, read at the start of every session
 about-me/
   about-me.md                ← role, responsibilities, priorities, tools
   voice-profile.md           ← how the user writes and wants drafts to sound
@@ -30,11 +30,8 @@ about-me/
   memory.md                  ← living: durable facts worth remembering across sessions
 ```
 
-This folder is **identical for Claude Cowork and Copilot Cowork**. Only where it
-lives differs:
-- **Track A — Claude Cowork:** the personal skills/instructions location (ask Cowork
-  to "list my skills" to find it).
-- **Track B — Copilot Cowork:** `Documents/Cowork` in OneDrive.
+These live in your Claude Cowork skills/instructions location — ask Cowork to "list
+my skills" to find it.
 
 Note for the user: these are **context/instruction files, not skills**. Installing a
 skill is a separate step and is what creates the skills folder.
@@ -52,7 +49,7 @@ skill is a separate step and is what creates the skills folder.
 
 ## Writing the files
 
-- Write `copilot-instructions.md` as a short entry point that points to the `about-me/`
+- Write `cowork-instructions.md` as a short entry point that points to the `about-me/`
   files — progressive disclosure, not one giant file.
 - Keep each `about-me/` file focused on its one topic.
 - Use plain, first-person statements ("I lead…", "I prefer drafts that…").

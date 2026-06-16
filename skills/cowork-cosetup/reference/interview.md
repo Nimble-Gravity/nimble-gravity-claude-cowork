@@ -30,7 +30,7 @@ client-facing vs internal notes.
 
 ## File templates
 
-`copilot-instructions.md`
+`cowork-instructions.md`
 ```
 # Working with me
 Read the about-me/ files at the start of each session. I'm [name], [role] on [team].

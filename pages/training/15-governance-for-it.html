@@ -63,22 +63,22 @@
 
 <!-- THE AUDIT GAP -->
 <div class="section section-dark" id="audit">
-  <div class="sec-eyebrow on-dark">02 — The audit gap, and how to route around it</div>
-  <h2 class="sec-title on-dark">The one fact that decides regulated <em>workloads</em></h2>
-  <p class="sec-sub on-dark">This is the deciding point for a regulated client, so be precise about it. As of June 2026, Claude Cowork's activity isn't centrally auditable — and Copilot Cowork is exactly how you close that gap.</p>
+  <div class="sec-eyebrow on-dark">02 — The audit-coverage gap, and how to manage it</div>
+  <h2 class="sec-title on-dark">The one fact every regulated rollout must <em>address</em></h2>
+  <p class="sec-sub on-dark">This is the deciding point for a regulated bank, so be precise about it. As of June 2026, Claude Cowork's activity isn't centrally auditable — so you manage it deliberately, with scope, policy, and monitoring.</p>
 
   <div class="dev-grid-2" style="margin-top:28px;">
     <div class="dev-card">
-      <div class="dev-kicker">The gap — Claude Cowork</div>
-      <h3>Activity isn't in the audit logs</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">As of June 2026, Claude Cowork activity is not in Anthropic's Compliance API or audit logs, and history lives locally on the user's machine — it can't be centrally managed or exported. Anthropic itself steers regulated workloads away from it.</p>
-      <div class="dev-quote">Great for personal productivity; not for compliance-bound work.</div>
+      <div class="dev-kicker">The gap</div>
+      <h3>Activity isn't in the audit logs yet</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">As of June 2026, Claude Cowork activity is not in Anthropic's Compliance API or audit logs, and history lives locally on the user's machine — it can't be centrally managed or exported. Anthropic is actively working to close this; re-verify it each cycle.</p>
+      <div class="dev-quote">Treat it as a known limitation to manage, not a blocker.</div>
     </div>
     <div class="dev-card">
-      <div class="dev-kicker">The close — Copilot Cowork</div>
-      <h3>In-tenant, Purview-audited</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Same engine, run inside your Microsoft 365 tenant. It inherits Purview audit and Enterprise Data Protection, so regulated activity is logged where your compliance team already looks. Route compliance-bound work here.</p>
-      <div class="dev-quote">Lead with Claude Cowork; send regulated work to Copilot Cowork.</div>
+      <div class="dev-kicker">How you manage it</div>
+      <h3>Scope, policy, and monitoring</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Govern it with the controls you do have: least-privilege folder access, approvals on for sensitive work, and usage monitoring through the admin dashboard and Analytics API. For work that needs zero-retention or centralized audit today, use Anthropic's audited surfaces — the API or Claude Code Enterprise.</p>
+      <div class="dev-quote">Scope tightly; keep approvals on; watch the analytics.</div>
     </div>
   </div>
 </div>
@@ -104,7 +104,7 @@
     <div class="tip-trick-icon">🛡️</div>
     <div class="tip-trick-copy">
       <div class="tip-trick-label">What to put in front of your CISO</div>
-      <p>One page: Cowork is admin-enabled, identity-bound through SSO/SCIM, and MDM-managed; commercial data isn't trained on and is kept 30 days; and regulated workloads run on Copilot Cowork for Purview-grade audit. That's the routing decision the capstone asks you to make.</p>
+      <p>One page: Cowork is admin-enabled, identity-bound through SSO/SCIM, and MDM-managed; commercial data isn't trained on and is kept 30 days; access is least-privilege with approvals on for sensitive work; and the audit-coverage gap is tracked and re-verified each cycle. That's the governance case the capstone asks you to make.</p>
     </div>
   </div>
 </div>

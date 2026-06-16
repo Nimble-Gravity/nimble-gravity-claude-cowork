@@ -12,10 +12,12 @@ The three skills the workshop ships as real, downloadable artifacts. They *are* 
 
 The primary install path taught on-site is **copy-paste**: the lesson shows the full `SKILL.md` in a copy block, the attendee pastes it into Cowork, and asks Claude to "make this a skill." The downloadable `SKILL.md` here is the secondary path for re-runs or later use.
 
-## Install paths
+## Install path
 
-- **Track A — Claude Cowork:** save the skill into your personal skills folder. Installing your first skill is what *creates* the skills folder. Note: the co-setup interview writes about-me / instruction files — those are **context files, not skills**; only the packaged skill goes in the skills folder.
-- **Track B — Copilot Cowork:** place under `Documents/Cowork` in OneDrive per your tenant's setup.
+Save the skill into your Claude Cowork skills folder (ask Cowork to "list my skills"
+to find it; installing your first skill is what *creates* the folder). Note: the
+co-setup interview writes about-me / instruction files — those are **context files,
+not skills**; only the packaged skill goes in the skills folder.
 
 ## Authoring standard
 

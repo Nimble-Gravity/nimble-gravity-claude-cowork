@@ -44,7 +44,7 @@
 
   <div class="insight-grid" style="margin-top:28px;">
     <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">copilot-instructions.md</div>
+      <div class="sec-eyebrow" style="margin-bottom:6px;">cowork-instructions.md</div>
       <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The file Cowork reads at the start of every session. It holds your standing context, which is what gets Cowork writing in your register from the first reply.</p>
     </div>
     <div class="insight-card">
@@ -96,21 +96,21 @@
 <!-- INSTALL THE SKILL -->
 <div class="section section-dark" id="install">
   <div class="sec-eyebrow on-dark">03 — Installing the co-setup skill</div>
-  <h2 class="sec-title on-dark">The same folder works on <em>both</em> products</h2>
-  <p class="sec-sub on-dark">The <code>cowork-cosetup</code> folder holds a <code>SKILL.md</code> and a short guide, and it's identical for Claude Cowork and Copilot Cowork. What changes between them is where your skills folder lives and which connectors are on. Get the folder first, since it's usually shared with you in OneDrive or Teams, then follow your track.</p>
+  <h2 class="sec-title on-dark">Drop it in your skills folder and <em>run it</em></h2>
+  <p class="sec-sub on-dark">The <code>cowork-cosetup</code> folder holds a <code>SKILL.md</code> and a short guide. Get the folder, put it in your Claude Cowork skills folder, then run it from a fresh session.</p>
 
   <div class="dev-grid-2" style="margin-top:28px;">
     <div class="dev-card">
-      <div class="dev-kicker">Track A · Claude Cowork</div>
-      <h3>Personal skills folder</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Ask Cowork to "list my skills" to find the folder, or "set up my skills folder" if you don't have one yet. Drop <code>cowork-cosetup</code> in, open a fresh session, and run <code>/cowork-cosetup</code>.</p>
-      <div class="dev-quote">Skills live in your local skills folder, not OneDrive.</div>
+      <div class="dev-kicker">Step 1</div>
+      <h3>Find your skills folder</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Ask Cowork to "list my skills" to find the folder, or "set up my skills folder" if you don't have one yet. Drop <code>cowork-cosetup</code> in.</p>
+      <div class="dev-quote">Installing your first skill is what creates the skills folder.</div>
     </div>
     <div class="dev-card">
-      <div class="dev-kicker">Track B · Copilot Cowork</div>
-      <h3>Documents/Cowork in OneDrive</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Copy the folder into your <code>Documents/Cowork</code> skills area and wait for OneDrive to finish syncing. Open a fresh session and run <code>/cowork-cosetup</code>. If the interview can't pull anything in, check that your M365 connector is on.</p>
-      <div class="dev-quote">Skills sync with your M365 account.</div>
+      <div class="dev-kicker">Step 2</div>
+      <h3>Run it from a fresh session</h3>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Open a new session and run <code>/cowork-cosetup</code>. If the interview can't pull anything in, check that your connectors are on so it can read your real work.</p>
+      <div class="dev-quote">Cowork picks up new skills only when a session starts.</div>
     </div>
   </div>
 
@@ -140,7 +140,7 @@
     <div class="code-body">
 <pre id="skill-cosetup">---
 name: cowork-cosetup
-description: Interviews a new Cowork user and writes their personalization files — copilot-instructions.md plus an about-me/ folder — so Cowork knows their role, voice, priorities, and team from the first session. Use at first-time setup, when onboarding someone to Claude Cowork or Copilot Cowork, when a user asks to "set me up", "personalize Cowork", or run "co-setup", or whenever Cowork is giving generic, role-blind answers that ignore who the user is.
+description: Interviews a new Claude Cowork user and writes their personalization files — cowork-instructions.md plus an about-me/ folder — so Cowork knows their role, voice, priorities, and team from the first session. Use at first-time setup, when onboarding someone to Claude Cowork, when a user asks to "set me up", "personalize Cowork", or run "co-setup", or whenever Cowork is giving generic, role-blind answers that ignore who the user is.
 ---
 
 # Cowork Co-Setup
@@ -150,16 +150,15 @@ play back who the user is and tailor its help to their actual job.
 
 ## What you produce
 
-copilot-instructions.md      (read at the start of every session)
+cowork-instructions.md       (read at the start of every session)
 about-me/about-me.md         (role, responsibilities, priorities, tools)
 about-me/voice-profile.md    (how the user writes and wants drafts to sound)
 about-me/writing-rules.md    (do / don't rules for any drafted output)
 about-me/team.md             (living: who they work with and how)
 about-me/memory.md           (living: durable facts worth remembering)
 
-This folder is identical for Claude Cowork and Copilot Cowork. Only where it lives
-differs: Track A (Claude) = the personal skills/instructions location; Track B
-(Copilot) = Documents/Cowork in OneDrive. These are context files, not skills.
+These are context files, not skills — they live alongside your Claude Cowork skills
+folder. Installing your first skill is what creates that folder.
 
 ## The interview
 
