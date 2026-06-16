@@ -40,7 +40,12 @@
   function getQuiz(id)          { var s = getStore(); return (s.quiz || {})[id] || null; }
   function savePoll(id, value)  { var s = getStore(); s.poll = s.poll || {}; s.poll[id] = { value: value, ts: Date.now() }; setStore(s); }
   function getPoll(id)          { var s = getStore(); return (s.poll || {})[id] || null; }
+  function saveProfile(name)    { var s = getStore(); s.profile = { name: name, ts: Date.now() }; setStore(s); }
+  function getProfile()         { var s = getStore(); return s.profile || null; }
   function resetAll()           { try { window.localStorage.removeItem(LS_KEY); } catch (e) {} }
+
+  var MODULE_LABELS = { m1: 'Module 1 · Setup & Foundations', m2: 'Module 2 · Use Cowork', m3: 'Module 3 · Build a Skill', m4: 'Module 4 · Plugins & Rollout' };
+  function passedCount() { var s = getStore(); var q = s.quiz || {}; var n = 0; ['m1','m2','m3','m4'].forEach(function (m) { if (q[m] && q[m].passed) n++; }); return n; }
 
   // ── Content config (questions live here, not in lesson HTML) ────────────────
   var QUIZZES = {
@@ -56,8 +61,8 @@
         { q: 'What does the co-setup interview produce?',
           options: ['A new email account', 'About-me / instruction context files that personalize Cowork', 'A billing invoice'],
           answer: 1 },
-        { q: 'When do you route work to Copilot Cowork instead of Claude Cowork?',
-          options: ['Never', 'When the work is regulated and needs in-tenant audit coverage', 'Only for personal errands'],
+        { q: 'On your first delegated task, which permission mode is recommended?',
+          options: ['Act without asking', 'Ask before acting — approve each step', 'No mode is needed'],
           answer: 1 }
       ]
     },
@@ -104,8 +109,8 @@
         { q: 'As of June 2026, where is Claude Cowork activity NOT captured?',
           options: ['In your local history', 'In Anthropic’s Compliance API / audit logs', 'In the desktop app'],
           answer: 1 },
-        { q: 'Regulated workloads that need audit coverage should route to…',
-          options: ['Claude Cowork only', 'Copilot Cowork — in-tenant, Purview-audited', 'A personal account'],
+        { q: 'For a regulated bank, how do you handle the June 2026 audit-coverage gap?',
+          options: ['Ignore it', 'Manage it — least privilege, approvals on, monitor via the Analytics API, and re-verify each cycle', 'Stop using Cowork entirely'],
           answer: 1 },
         { q: 'Which three questions track adoption?',
           options: ['Are people using it? How deeply? Is it paying off?', 'Weather, time, and date?', 'None — adoption cannot be measured'],
@@ -181,7 +186,38 @@
       '.ix-readout-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}',
       '.ix-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid var(--border);background:var(--off);color:var(--slate);}',
       '.ix-pill.on{border-color:rgba(64,140,132,.4);background:rgba(64,140,132,.12);color:var(--teal);}',
-      '.ix-note{margin-top:16px;font-size:13px;color:var(--slate);line-height:1.6;}'
+      '.ix-note{margin-top:16px;font-size:13px;color:var(--slate);line-height:1.6;}',
+      // profile
+      '.ix-field{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px;}',
+      '.ix-input{flex:1 1 240px;min-width:0;padding:11px 14px;border:1px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;color:var(--navy);background:var(--off);}',
+      '.ix-input:focus{outline:none;border-color:var(--teal);}',
+      '.ix-saved{margin-top:12px;font-size:14px;color:var(--teal);font-weight:600;}',
+      // progress
+      '.ix-prog{display:flex;flex-direction:column;gap:10px;margin-top:18px;}',
+      '.ix-prog-row{display:flex;align-items:center;gap:14px;padding:12px 16px;border:1px solid var(--border);border-radius:12px;background:var(--off);}',
+      '.ix-prog-row.on{border-color:rgba(64,140,132,.4);background:rgba(64,140,132,.1);}',
+      '.ix-prog-check{flex:0 0 auto;width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;background:#c3c2cf;}',
+      '.ix-prog-row.on .ix-prog-check{background:var(--mint-on-dark);}',
+      '.ix-prog-label{flex:1 1 auto;min-width:0;font-size:15px;font-weight:600;color:var(--navy);}',
+      '.ix-prog-score{font-size:13px;color:var(--slate);font-family:\'Roboto Mono\',monospace;}',
+      '.ix-bar{height:10px;border-radius:999px;background:var(--border);overflow:hidden;margin-top:18px;}',
+      '.ix-bar-fill{height:100%;background:var(--mint-on-dark);transition:width .4s ease;}',
+      '.ix-prog-summary{margin-top:12px;font-size:15px;color:var(--navy);font-weight:600;}',
+      // certificate
+      '.ix-cert{margin-top:18px;border:2px solid var(--teal);border-radius:16px;padding:40px 36px;text-align:center;background:linear-gradient(180deg,#fff, #f7faf9);}',
+      '.ix-cert-eyebrow{font-family:\'Roboto Mono\',monospace;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);}',
+      '.ix-cert-title{font-size:26px;font-weight:700;color:var(--navy);margin:10px 0 6px;}',
+      '.ix-cert-line{font-size:15px;color:var(--slate);}',
+      '.ix-cert-name{font-size:30px;font-weight:700;color:var(--navy);margin:14px 0;border-bottom:2px solid var(--border);display:inline-block;padding:0 24px 8px;}',
+      '.ix-cert-meta{font-size:13px;color:var(--slatel);margin-top:14px;}',
+      '.ix-cert-disclaimer{margin-top:18px;font-size:12px;color:var(--slatel);font-style:italic;}',
+      '.ix-locked{margin-top:18px;border:1px dashed var(--border);border-radius:14px;padding:30px 28px;text-align:center;background:var(--off);}',
+      '.ix-locked-icon{font-size:28px;}',
+      '.ix-locked-title{font-size:18px;font-weight:600;color:var(--navy);margin-top:8px;}',
+      '.ix-locked-sub{font-size:14px;color:var(--slate);margin-top:6px;}',
+      // print: when printing the certificate, show only the print layer
+      '.ix-print-layer{display:none;}',
+      '@media print{body.ix-printing > *:not(.ix-print-layer){display:none !important;} .ix-print-layer{display:block !important;padding:0;} .ix-print-layer .ix-cert{margin:0;border-width:3px;}}'
     ].join('');
     document.head.appendChild(s);
   }
@@ -371,12 +407,146 @@
     mount.appendChild(card);
   }
 
+  // ── Profile (a name, stored locally) ────────────────────────────────────────
+  function renderProfile(mount) {
+    mount.innerHTML = '';
+    var prof = getProfile();
+    var card = el('div', 'ix-card');
+    card.appendChild(el('div', 'ix-kicker', 'Your profile'));
+    card.appendChild(el('div', 'ix-card-title', 'Who you are'));
+    card.appendChild(el('p', 'ix-card-sub', 'Add your name so your progress and certificate are personalized. Stored on this device only.'));
+    var field = el('div', 'ix-field');
+    var input = el('input', 'ix-input');
+    input.type = 'text';
+    input.placeholder = 'Your full name';
+    if (prof && prof.name) input.value = prof.name;
+    var save = el('button', 'ix-btn', 'Save');
+    save.type = 'button';
+    field.appendChild(input);
+    field.appendChild(save);
+    card.appendChild(field);
+    var saved = el('p', 'ix-saved');
+    saved.style.display = 'none';
+    card.appendChild(saved);
+    function doSave() {
+      var name = input.value.trim();
+      if (!name) return;
+      saveProfile(name);
+      saved.textContent = 'Saved — hi, ' + name + '.';
+      saved.style.display = 'block';
+      refreshProgressViews();
+    }
+    save.addEventListener('click', doSave);
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') doSave(); });
+    mount.appendChild(card);
+  }
+
+  // ── Progress dashboard ──────────────────────────────────────────────────────
+  function renderProgress(mount) {
+    mount.innerHTML = '';
+    var s = getStore();
+    var quiz = s.quiz || {};
+    var prof = getProfile();
+    var card = el('div', 'ix-card');
+    card.appendChild(el('div', 'ix-kicker', 'Your progress'));
+    card.appendChild(el('div', 'ix-card-title', (prof && prof.name) ? (prof.name + "'s progress") : 'Your progress'));
+    card.appendChild(el('p', 'ix-card-sub', 'Module quizzes you have passed, on this device.'));
+    var rows = el('div', 'ix-prog');
+    ['m1', 'm2', 'm3', 'm4'].forEach(function (m) {
+      var q = quiz[m];
+      var passed = q && q.passed;
+      var row = el('div', 'ix-prog-row' + (passed ? ' on' : ''));
+      row.appendChild(el('span', 'ix-prog-check', passed ? '✓' : '○'));
+      row.appendChild(el('span', 'ix-prog-label', MODULE_LABELS[m]));
+      row.appendChild(el('span', 'ix-prog-score', q ? (q.score + '/' + q.total) : '—'));
+      rows.appendChild(row);
+    });
+    card.appendChild(rows);
+    var n = passedCount();
+    var bar = el('div', 'ix-bar');
+    var fill = el('div', 'ix-bar-fill');
+    fill.style.width = (n / 4 * 100) + '%';
+    bar.appendChild(fill);
+    card.appendChild(bar);
+    card.appendChild(el('p', 'ix-prog-summary', n + ' of 4 modules complete' + (n === 4 ? ' — certificate unlocked below.' : '.')));
+    var actions = el('div', 'ix-actions');
+    var reset = el('button', 'ix-btn ix-btn--ghost', 'Clear my data');
+    reset.type = 'button';
+    reset.addEventListener('click', function () { resetAll(); refreshProgressViews(); document.querySelectorAll('[data-ix-profile]').forEach(renderProfile); });
+    actions.appendChild(reset);
+    card.appendChild(actions);
+    mount.appendChild(card);
+  }
+
+  // ── Certificate (client-only; gated on all four module quizzes passed) ──────
+  function buildCertNode() {
+    var prof = getProfile();
+    var name = (prof && prof.name) ? prof.name : '';
+    var cert = el('div', 'ix-cert');
+    cert.appendChild(el('div', 'ix-cert-eyebrow', 'Nimble Gravity × Axos Bank · Cowork Enablement'));
+    cert.appendChild(el('div', 'ix-cert-title', 'Certificate of Completion'));
+    cert.appendChild(el('div', 'ix-cert-line', 'This certifies that'));
+    cert.appendChild(el('div', 'ix-cert-name', name || 'Your name'));
+    cert.appendChild(el('div', 'ix-cert-line', 'completed the four-module Cowork Enablement Program.'));
+    var d = new Date();
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    cert.appendChild(el('div', 'ix-cert-meta', months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear()));
+    cert.appendChild(el('div', 'ix-cert-disclaimer', 'A personal record of completion — not an official Axos training record.'));
+    return cert;
+  }
+
+  function renderCertificate(mount) {
+    mount.innerHTML = '';
+    var n = passedCount();
+    if (n < 4) {
+      var locked = el('div', 'ix-locked');
+      locked.appendChild(el('div', 'ix-locked-icon', '🔒'));
+      locked.appendChild(el('div', 'ix-locked-title', 'Certificate locked'));
+      locked.appendChild(el('div', 'ix-locked-sub', 'Pass all four module quizzes to unlock your certificate — ' + n + ' of 4 done. The quizzes are at the end of each module lab.'));
+      mount.appendChild(locked);
+      return;
+    }
+    var prof = getProfile();
+    var card = el('div', 'ix-card');
+    card.appendChild(el('div', 'ix-kicker', 'You did it'));
+    card.appendChild(el('div', 'ix-card-title', 'Your certificate'));
+    if (!prof || !prof.name) {
+      card.appendChild(el('p', 'ix-card-sub', 'Add your name in the profile above to personalize it.'));
+    }
+    card.appendChild(buildCertNode());
+    var actions = el('div', 'ix-actions');
+    var printBtn = el('button', 'ix-btn', 'Print / Save as PDF');
+    printBtn.type = 'button';
+    printBtn.addEventListener('click', function () {
+      var layer = el('div', 'ix-print-layer');
+      layer.appendChild(buildCertNode());
+      document.body.appendChild(layer);
+      document.body.classList.add('ix-printing');
+      function cleanup() { document.body.classList.remove('ix-printing'); if (layer.parentNode) layer.parentNode.removeChild(layer); window.removeEventListener('afterprint', cleanup); }
+      window.addEventListener('afterprint', cleanup);
+      window.print();
+      setTimeout(cleanup, 1500);
+    });
+    actions.appendChild(printBtn);
+    card.appendChild(actions);
+    mount.appendChild(card);
+  }
+
+  function refreshProgressViews() {
+    document.querySelectorAll('[data-ix-progress]').forEach(renderProgress);
+    document.querySelectorAll('[data-ix-certificate]').forEach(renderCertificate);
+    document.querySelectorAll('[data-ix-readout]').forEach(renderReadout);
+  }
+
   // ── Init ────────────────────────────────────────────────────────────────────
   function init() {
     injectStyles();
     document.querySelectorAll('[data-ix-quiz]').forEach(renderQuiz);
     document.querySelectorAll('[data-ix-poll]').forEach(renderPoll);
     document.querySelectorAll('[data-ix-readout]').forEach(renderReadout);
+    document.querySelectorAll('[data-ix-profile]').forEach(renderProfile);
+    document.querySelectorAll('[data-ix-progress]').forEach(renderProgress);
+    document.querySelectorAll('[data-ix-certificate]').forEach(renderCertificate);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

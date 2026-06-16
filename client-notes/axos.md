@@ -76,3 +76,18 @@ the 15 lessons and the 5-place lesson manifest are unchanged):
   nav link and footer portal links make the portal reachable from any page.
 - New `.agenda` CSS pattern (`styles/shared.css` / `DESIGN-SYSTEM.md`).
 - M1 deepened with one section each in lessons 01 (good first tasks at Axos) and 02 (verify your setup).
+
+## Progress, certificate, and syllabus (client-only)
+
+- `pages/workshops/my-progress.html` — a localStorage **profile + progress dashboard + a
+  printable certificate** that unlocks once all four module quizzes pass. It is a
+  **personal record, not an official Axos training record** (no accounts, no server, not
+  verifiable, per-device, lost if the cache clears). The authoritative
+  login / attendance / certificate is a **separate track that should run through Axos IT** —
+  their LMS (SCORM/xAPI) or Entra SSO — which would also unlock the facilitator engagement
+  readout deferred earlier.
+- `pages/workshops/syllabus.html` — a printable **master program syllabus**: all four
+  2-hour agendas at a glance plus a schedule (`data-client-slot="schedule-dates"` — fill in
+  the cohort's dates).
+- The per-hub agendas were expanded with finer sub-steps and inline facilitator cues
+  (`.agenda-body ul` / `.agenda-cue`).
