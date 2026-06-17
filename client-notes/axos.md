@@ -32,8 +32,8 @@ each cohort; it's date-sensitive and Anthropic is closing it.
 |---|---|---|
 | `pages/training/03-first-cowork-session.html` | `starter-tasks-m1` | Loan-file / deposit / compliance-doc starters |
 | `pages/training/04-use-cases-by-industry.html` | `industry-usecases-m2` | Credit memo, deposit/treasury summary, fraud/AML triage, portfolio loan comparison |
-| `pages/training/06-use-cowork-lab.html` | `canonical-scenario-m2` | Commercial loan file → one-page credit summary with flagged risks |
-| `pages/training/12-governance-and-adoption.html` | `adoption-dashboard-m4` | Axos Power BI adoption dashboard reference |
+| `pages/training/07-use-cowork-lab.html` | `canonical-scenario-m2` | Commercial loan file → one-page credit summary with flagged risks |
+| `pages/training/15-governance-and-adoption.html` | `adoption-dashboard-m4` | Axos Power BI adoption dashboard reference |
 | `index.html` | hero eyebrow, `<title>`, "Who it's for" | Axos framing (commercial/consumer banking, lending, treasury, risk/compliance/ops) |
 | `pages/training/index.html` | hero eyebrow | Axos framing |
 

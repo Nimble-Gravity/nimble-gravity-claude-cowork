@@ -30,12 +30,12 @@
       subLabel: 'Use Cowork',
       color: '#8c47e4',
       navColor: '#c4b5fd',
-      filePrefix: ['04-', '05-', '13-', '06-'],
+      filePrefix: ['04-', '05-', '06-', '07-'],
       pages: [
         '04-use-cases-by-industry',
         '05-working-effectively',
-        '13-folder-access-walkthrough',
-        '06-use-cowork-lab'
+        '06-folder-access-walkthrough',
+        '07-use-cowork-lab'
       ],
       labels: [
         'By Industry',
@@ -51,12 +51,12 @@
       subLabel: 'Build a Skill',
       color: '#2b6880',
       navColor: '#7dd3e8',
-      filePrefix: ['07-', '08-', '14-', '09-'],
+      filePrefix: ['08-', '09-', '10-', '11-'],
       pages: [
-        '07-decompose-your-workflow',
-        '08-anatomy-of-a-skill',
-        '14-make-it-a-skill',
-        '09-build-a-skill-lab'
+        '08-decompose-your-workflow',
+        '09-anatomy-of-a-skill',
+        '10-make-it-a-skill',
+        '11-build-a-skill-lab'
       ],
       labels: [
         'Decompose',
@@ -72,12 +72,12 @@
       subLabel: 'Plugins & Rollout',
       color: '#e8a317',
       navColor: '#f2c56b',
-      filePrefix: ['10-', '11-', '15-', '12-'],
+      filePrefix: ['12-', '13-', '14-', '15-'],
       pages: [
-        '10-skills-to-plugins',
-        '11-deploy-to-your-team',
-        '15-governance-for-it',
-        '12-governance-and-adoption'
+        '12-skills-to-plugins',
+        '13-deploy-to-your-team',
+        '14-governance-for-it',
+        '15-governance-and-adoption'
       ],
       labels: [
         'Skills → Plugins',

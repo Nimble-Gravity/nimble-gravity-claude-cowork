@@ -5,8 +5,8 @@ The three skills the workshop ships as real, downloadable artifacts. They *are* 
 | Skill | Folder | Embedded in lesson | Purpose |
 |---|---|---|---|
 | Co-setup | `cowork-cosetup/` | `02-getting-set-up.html` | Interviews you and writes your personalization / about-me files. |
-| Workflow decomposition | `workflow-decomposition/` | `09-build-a-skill-lab.html` | Interviews you about a workflow and offers to draft it as a skill. |
-| Memo generation | `memo-generation/` | `08-anatomy-of-a-skill.html` | Small, finished, high-ROI example: notes/email → formatted memo. The good-vs-bad worked example. |
+| Workflow decomposition | `workflow-decomposition/` | `11-build-a-skill-lab.html` | Interviews you about a workflow and offers to draft it as a skill. |
+| Memo generation | `memo-generation/` | `09-anatomy-of-a-skill.html` | Small, finished, high-ROI example: notes/email → formatted memo. The good-vs-bad worked example. |
 
 ## Distribution (v1 = copy-paste)
 
@@ -21,4 +21,4 @@ not skills**; only the packaged skill goes in the skills folder.
 
 ## Authoring standard
 
-These model Anthropic's published skill-authoring guidance: a tight keyword-rich `description`, a body under 500 lines, progressive disclosure, good/bad examples, and **evals before docs**. See `08-anatomy-of-a-skill.html` for the standard quoted verbatim and date-stamped.
+These model Anthropic's published skill-authoring guidance: a tight keyword-rich `description`, a body under 500 lines, progressive disclosure, good/bad examples, and **evals before docs**. See `09-anatomy-of-a-skill.html` for the standard quoted verbatim and date-stamped.

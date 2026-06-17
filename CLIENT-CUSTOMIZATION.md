@@ -28,8 +28,8 @@ Rules:
 | Key | File | What to replace |
 |---|---|---|
 | `industry-usecases-m2` | `pages/training/04-use-cases-by-industry.html` | The 2–3 seed industry use cases, re-cast to the client's verticals. |
-| `canonical-scenario-m2` | `pages/training/06-use-cowork-lab.html` | The canonical lab scenario, set to the client's real workflow. |
-| `adoption-dashboard-m4` | `pages/training/12-governance-and-adoption.html` | Link to the client's (or NG's) adoption-dashboard reference build. |
+| `canonical-scenario-m2` | `pages/training/07-use-cowork-lab.html` | The canonical lab scenario, set to the client's real workflow. |
+| `adoption-dashboard-m4` | `pages/training/15-governance-and-adoption.html` | Link to the client's (or NG's) adoption-dashboard reference build. |
 | `gif-*` | folder-access walkthrough & how-to sections | GIF walkthroughs recorded for the client's stack (see `assets/gifs/`). |
 
 Add new slots as the engagement needs them; record each one in this table.

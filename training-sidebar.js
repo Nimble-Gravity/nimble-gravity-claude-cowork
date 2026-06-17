@@ -21,8 +21,8 @@
       lessons: [
         { file: '04-use-cases-by-industry.html',     title: 'By Industry' },
         { file: '05-working-effectively.html',       title: 'Work Effectively' },
-        { file: '13-folder-access-walkthrough.html', title: 'Folder Access' },
-        { file: '06-use-cowork-lab.html',            title: 'Use Cowork Lab', exercise: true }
+        { file: '06-folder-access-walkthrough.html', title: 'Folder Access' },
+        { file: '07-use-cowork-lab.html',            title: 'Use Cowork Lab', exercise: true }
       ]
     },
     {
@@ -31,10 +31,10 @@
       color: '#7dd3e8',
       slidesFile: 'module-3-slides.html',
       lessons: [
-        { file: '07-decompose-your-workflow.html', title: 'Decompose' },
-        { file: '08-anatomy-of-a-skill.html',      title: 'Skill Anatomy' },
-        { file: '14-make-it-a-skill.html',         title: 'Make It a Skill' },
-        { file: '09-build-a-skill-lab.html',       title: 'Build a Skill Lab', exercise: true }
+        { file: '08-decompose-your-workflow.html', title: 'Decompose' },
+        { file: '09-anatomy-of-a-skill.html',      title: 'Skill Anatomy' },
+        { file: '10-make-it-a-skill.html',         title: 'Make It a Skill' },
+        { file: '11-build-a-skill-lab.html',       title: 'Build a Skill Lab', exercise: true }
       ]
     },
     {
@@ -43,10 +43,10 @@
       color: '#f2c56b',
       slidesFile: 'module-4-slides.html',
       lessons: [
-        { file: '10-skills-to-plugins.html',        title: 'Skills → Plugins' },
-        { file: '11-deploy-to-your-team.html',      title: 'Deploy to Team' },
-        { file: '15-governance-for-it.html',        title: 'Governance for IT' },
-        { file: '12-governance-and-adoption.html',  title: 'Governance & Adoption', exercise: true }
+        { file: '12-skills-to-plugins.html',        title: 'Skills → Plugins' },
+        { file: '13-deploy-to-your-team.html',      title: 'Deploy to Team' },
+        { file: '14-governance-for-it.html',        title: 'Governance for IT' },
+        { file: '15-governance-and-adoption.html',  title: 'Governance & Adoption', exercise: true }
       ]
     }
   ];
