@@ -68,7 +68,7 @@ and the machine awake for tasks. Launched Jan 12 2026 (macOS preview); GA Apr 9 
 
 ### Module 3 — skills (highest-scrutiny; quote Anthropic verbatim, date-stamp)
 - A skill = a folder with **`SKILL.md`** (YAML frontmatter + Markdown body), on the open **Agent Skills** standard;
-  the same file runs in Claude Cowork, Claude Code, and Copilot Cowork.
+  the same file runs in Claude Cowork and Claude Code.
 - **Frontmatter:** `name` ≤ 64 chars, lowercase/numbers/hyphens, gerund form, no "anthropic"/"claude".
   `description` third person, ≤ 1024 chars, **what it does + when to use it** with trigger keywords — the most
   important field (only name+description are pre-loaded for skill selection).
@@ -90,8 +90,8 @@ and the machine awake for tasks. Launched Jan 12 2026 (macOS preview); GA Apr 9 
   Team/Enterprise **private marketplaces** via ZIP upload or GitHub sync (≤ 30 min; 100-plugin cap, 50 MB/file).
   Install prefs: Installed-by-default / Required / Available / Not-available (Enterprise per-group override).
   **Edit model:** org-managed plugins can't be edited by members — copy/tweak from a template ("owner pushes,
-  members copy"). **Portability:** author in the Claude Code structure (superset) → `Convert-ClaudePluginToMOS3.ps1`
-  for an M365 package. "Author once, deploy to both surfaces."
+  members copy"). **Portability:** a skill or plugin authored in the Claude Code structure (the superset) runs
+  unchanged in Claude Cowork and Claude Code.
 - **The audit gap (decisive):** **as of June 2026, Claude Cowork activity is NOT in Anthropic's Compliance API
   or audit logs**, and history lives locally (can't be centrally managed/exported). Anthropic steers regulated
   workloads away. **Manage it deliberately** — least privilege, approvals on, monitor via the Analytics API,

@@ -66,7 +66,7 @@ The 4-module arc (each module = two learning lessons + a lab; run over two weeks
 1. **Setup & Foundations** — delegate vs. chat; the engine (Claude Code's, in Claude Desktop, local + VM); personalization via Global/Folder/Project instructions and the M365 connector; a first delegated session.
 2. **Use Cowork** — industry use cases (seeded from Anthropic's open-sourced finance/legal packs); working effectively (Sonnet-default cost discipline, permission modes, prompt injection, `/schedule`); a hands-on lab.
 3. **Build a Skill** — decompose a workflow into a blueprint; `SKILL.md` the Anthropic way (keyword-rich description, body < 500 lines, progressive disclosure, **evals before docs**); a lab running the skill-creator loop to ship a `.skill`.
-4. **Plugins & Rollout** — skills → plugins (bundles, marketplaces, portability via the Claude Code superset + M365 conversion); private-marketplace deployment + the owner-pushes/members-copy model; a capstone on governance (the audit gap → manage it; route high-assurance work to Anthropic's audited surfaces) and adoption (Analytics API + OpenTelemetry dashboard, phased rollout).
+4. **Plugins & Rollout** — skills → plugins (bundles, marketplaces, portability via the Claude Code superset); private-marketplace deployment + the owner-pushes/members-copy model; a capstone on governance (the audit gap → manage it; route high-assurance work to Anthropic's audited surfaces) and adoption (Analytics API + OpenTelemetry dashboard, phased rollout).
 
 Guidelines for content:
 

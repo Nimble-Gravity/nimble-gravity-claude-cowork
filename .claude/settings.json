@@ -61,7 +61,8 @@
       "Bash(curl -s -o /dev/null -w \"../workshops/my-progress.html → HTTP %{http_code}\\\\n\" http://localhost:8000/pages/workshops/my-progress.html)",
       "Bash(xargs -0 perl -pi -e 's/Module \\([1-4]\\)/Workshop $1/g')",
       "WebSearch",
-      "WebFetch(domain:anthropic.skilljar.com)"
+      "WebFetch(domain:anthropic.skilljar.com)",
+      "Bash(awk 'NR>=103 && NR<=114' cowork-context.md)"
     ]
   }
 }
