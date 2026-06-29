@@ -65,6 +65,24 @@
       <div class="dev-quote">M1 is the thinnest module — let the demo and lab breathe.</div>
     </div>
   </div>
+
+  <div class="demo-asset" style="margin-top:28px;">
+    <p class="sec-sub on-dark" style="margin-bottom:14px;"><strong>Run it as a before/after.</strong> Download the sample loan file, drop it in a folder, and run the prompt below <em>cold</em> — before co-setup — then run the exact same prompt <em>after</em> co-setup. Same ask; the second answer comes back in the banker's voice and framed for the role. That contrast is the demo.</p>
+    <a href="../../assets/demo/sample-loan-file.md" download style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.28);color:var(--white);text-decoration:none;padding:10px 18px;border-radius:8px;font-weight:600;font-size:14px;">Download the sample loan file ↓</a>
+
+    <div class="code-wrap" style="margin-top:18px;">
+      <div class="code-topbar">
+        <span class="cb-dot" style="background:#ff5f57"></span>
+        <span class="cb-dot" style="background:#febc2e"></span>
+        <span class="cb-dot" style="background:#28c840"></span>
+        <span class="code-label">Demo prompt — paste into Cowork (run before, then after)</span>
+        <button class="copy-btn" onclick="copyBlock('demo-prompt-w1', this)">Copy</button>
+      </div>
+      <div class="code-body">
+<pre id="demo-prompt-w1">Read the loan file in this folder and write a one-page credit summary I can take to committee. Cover: the borrower and the request, the key financials and any trends, collateral and guarantors, covenant headroom, and the top three risks to flag. Don't invent numbers — if something isn't in the file, say so.</pre>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- WORKSHOP 2 -->
@@ -164,5 +182,16 @@
 </div>
 
 <div class="page-footer"></div>
+<script>
+function copyBlock(id, btn) {
+  var pre = document.getElementById(id);
+  if (!pre || !navigator.clipboard) return;
+  navigator.clipboard.writeText(pre.innerText).then(function () {
+    var prev = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = prev; }, 2000);
+  });
+}
+</script>
 </body>
 </html>

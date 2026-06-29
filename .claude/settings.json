@@ -63,7 +63,8 @@
       "WebSearch",
       "WebFetch(domain:anthropic.skilljar.com)",
       "Bash(awk 'NR>=103 && NR<=114' cowork-context.md)",
-      "Bash(git branch *)"
+      "Bash(git branch *)",
+      "Bash(awk '/id=\"workshop-1\"/,/id=\"workshop-2\"/' pages/workshops/facilitator-guide.html)"
     ]
   }
 }
