@@ -44,7 +44,7 @@
 
   <div class="insight-grid" style="margin-top:28px;">
     <div class="insight-card">
-      <div class="sec-eyebrow" style="margin-bottom:6px;">cowork-instructions.md</div>
+      <div class="sec-eyebrow" style="margin-bottom:6px;">claude.md</div>
       <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">The file Cowork reads at the start of every session. It holds your standing context, which is what gets Cowork writing in your register from the first reply.</p>
     </div>
     <div class="insight-card">
@@ -89,6 +89,14 @@
     <div class="tip-trick-copy">
       <div class="tip-trick-label">Least privilege from the start</div>
       <p>Connectors reach your services through Anthropic's cloud with delegated permissions scoped to you. Connect what the work needs and no more, and add connectors later as new tasks call for them.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:18px;">
+    <div class="tip-trick-icon">🔁</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Can't connect? Run it anyway</div>
+      <p>If a connector won't authorize in time, don't wait on it. Run <code>/cowork-cosetup</code> without it — the interview just asks a few more questions instead of pre-filling from your data, and you still get the full personalization. Or grant a single folder and skip connectors for now.</p>
     </div>
   </div>
 </div>
@@ -140,7 +148,7 @@
     <div class="code-body">
 <pre id="skill-cosetup">---
 name: cowork-cosetup
-description: Interviews a new Claude Cowork user and writes their personalization files — cowork-instructions.md plus an about-me/ folder — so Cowork knows their role, voice, priorities, and team from the first session. Use at first-time setup, when onboarding someone to Claude Cowork, when a user asks to "set me up", "personalize Cowork", or run "co-setup", or whenever Cowork is giving generic, role-blind answers that ignore who the user is.
+description: Interviews a new Claude Cowork user and writes their personalization files — claude.md plus an about-me/ folder — so Cowork knows their role, voice, priorities, and team from the first session. Use at first-time setup, when onboarding someone to Claude Cowork, when a user asks to "set me up", "personalize Cowork", or run "co-setup", or whenever Cowork is giving generic, role-blind answers that ignore who the user is.
 ---
 
 # Cowork Co-Setup
@@ -150,7 +158,7 @@ play back who the user is and tailor its help to their actual job.
 
 ## What you produce
 
-cowork-instructions.md       (read at the start of every session)
+claude.md       (read at the start of every session)
 about-me/about-me.md         (role, responsibilities, priorities, tools)
 about-me/voice-profile.md    (how the user writes and wants drafts to sound)
 about-me/writing-rules.md    (do / don't rules for any drafted output)
@@ -230,7 +238,7 @@ relevant file, fix it, and re-run.</pre>
     <div class="bp-item">
       <div class="bp-num">02</div>
       <div class="bp-title">The files are there</div>
-      <div class="bp-body">Check that <code>cowork-instructions.md</code> and the <code>about-me/</code> folder were written, and skim <code>voice-profile.md</code> and <code>writing-rules.md</code> — those two are worth getting right.</div>
+      <div class="bp-body">Check that <code>claude.md</code> and the <code>about-me/</code> folder were written, and skim <code>voice-profile.md</code> and <code>writing-rules.md</code> — those two are worth getting right.</div>
     </div>
     <div class="bp-item">
       <div class="bp-num">03</div>

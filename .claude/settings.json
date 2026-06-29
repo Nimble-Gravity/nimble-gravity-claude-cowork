@@ -62,7 +62,8 @@
       "Bash(xargs -0 perl -pi -e 's/Module \\([1-4]\\)/Workshop $1/g')",
       "WebSearch",
       "WebFetch(domain:anthropic.skilljar.com)",
-      "Bash(awk 'NR>=103 && NR<=114' cowork-context.md)"
+      "Bash(awk 'NR>=103 && NR<=114' cowork-context.md)",
+      "Bash(git branch *)"
     ]
   }
 }

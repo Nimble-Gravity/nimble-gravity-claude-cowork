@@ -13,7 +13,7 @@ Claude Cowork process and Anthropic best practices, per the engagement decision.
 - Removed the "two products / one engine" framing; the workshop teaches Claude Cowork
   exclusively (lesson 01 now covers what it's built on — the Claude Code engine).
 - Setup is a single Claude Cowork track. The co-setup skill writes
-  **`cowork-instructions.md`** — **verify the exact filename the product expects** during setup,
+  **`claude.md`** — **verify the exact filename the product expects** during setup,
   since this is our naming choice.
 - Governance is Claude-only: the June-2026 audit-coverage gap is now **managed** (least
   privilege, approvals on, the admin dashboard + Analytics API, and re-verify each cycle).

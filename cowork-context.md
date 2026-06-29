@@ -43,7 +43,7 @@ and the machine awake for tasks. Launched Jan 12 2026 (macOS preview); GA Apr 9 
 ### Module 1 — setup
 - **NG `cowork-cosetup` skill (our method — see the "Setting Up Cowork for Personal Productivity" doc):**
   a guided 20–40 min interview that generates the personalization files instead of writing them by hand —
-  `cowork-instructions.md` (the entry point read every session) + an `about-me/` folder (`about-me`,
+  `claude.md` (the entry point read every session) + an `about-me/` folder (`about-me`,
   `voice-profile`, `writing-rules`, and the living `team` + `memory`). The skill installs into the personal
   skills folder (`"list my skills"` to find it). Run with `/cowork-cosetup` from a fresh session. It pre-fills
   from M365, asks in role-adaptive popups (Delivery/Operations/Sales/Enablement/Leadership), and
