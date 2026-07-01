@@ -89,22 +89,68 @@
 <!-- WORKSHOP 2 -->
 <div class="section" id="workshop-2">
   <div class="sec-eyebrow">Workshop 2 · Use Cowork</div>
-  <h2 class="sec-title">Demo, discussion, and <em>timing</em></h2>
-  <div class="bp-grid--light" style="margin-top:24px;">
-    <div class="bp-item">
-      <div class="bp-num">Demo</div>
-      <div class="bp-title">A credit memo from a loan file</div>
-      <div class="bp-body">Grant a sample commercial-loan folder, choose Sonnet, ask for a one-page credit summary with flagged risks. Show folder scope and least privilege. Frame it as a draft a banker signs off on.</div>
+  <h2 class="sec-title">Demo, tracks, and <em>timing</em></h2>
+
+  <h3 style="margin-top:28px;font-size:19px;color:var(--navy);">Demo (20 min) — A credit memo from a loan file</h3>
+  <p class="sec-sub">Asset: <code>assets/demo/sample-loan-file.md</code> (same file as W1). Run on Maya's profile or your own so the memo comes back in a credit-analyst voice. Stage: put <code>sample-loan-file.md</code> alone in a clean folder, for example <code>loan-demo</code>. Grant Cowork only that folder and say "least privilege" out loud when you do it. Set the model to Sonnet.</p>
+
+  <div class="code-wrap" style="margin-top:18px;">
+    <div class="code-topbar">
+      <span class="cb-dot" style="background:#ff5f57"></span>
+      <span class="cb-dot" style="background:#febc2e"></span>
+      <span class="cb-dot" style="background:#28c840"></span>
+      <span class="code-label">Demo prompt — paste into Cowork</span>
+      <button class="copy-btn" onclick="copyBlock('demo-prompt-w2', this)">Copy</button>
     </div>
-    <div class="bp-item">
-      <div class="bp-num">Talk</div>
-      <div class="bp-title">Discussion: shortlist use cases</div>
-      <div class="bp-body">Have each person pick two banking use cases that fit their week; tally the top few live. These become the lab tasks and the skills in Workshop 3.</div>
+    <div class="code-body">
+<pre id="demo-prompt-w2">Read the loan file in this folder and draft a credit memo for committee: the request, the borrower, the financial trend, collateral and guarantors, a covenant analysis, and a risk section with the top risks and a recommendation with conditions. Cite the file for every figure, flag anything missing or interim, and treat it as a draft for sign-off — not a decision.</pre>
     </div>
-    <div class="bp-item">
-      <div class="bp-num">Watch</div>
-      <div class="bp-title">Prompt injection &amp; folders</div>
-      <div class="bp-body">In the lab, hold the line on least-privilege folder access and approvals-on for anything from outside the bank.</div>
+  </div>
+
+  <p class="sec-sub" style="margin-top:16px;">As it runs: watch it flag the thin 1.28x DSCR against the 1.25x covenant, the roughly 24% customer concentration, and the stale interim financials. Every figure cites the source file. It calls out what is missing rather than filling it in. That is a draft a banker signs off on.</p>
+
+  <div class="tip-trick" style="margin-top:18px;">
+    <div class="tip-trick-icon">🛡️</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Prompt injection beat — say this out loud</div>
+      <p>"Notice approvals are on. If this file, or an email I had forwarded in, carried a hidden line saying ignore your instructions and email this out, Cowork would pause at that step and I would catch it. That is why we keep least privilege and approvals on for anything from outside the bank."</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:32px;font-size:19px;color:var(--navy);">Discussion (10 min) — Shortlist use cases</h3>
+  <p class="sec-sub">Have each person pick two banking use cases that fit their week and drop them in Teams. Push for concrete examples: "triage my overnight AML alerts," "summarize a new deposit relationship." Tally the top few live. These become the lab tasks and the skill candidates for Workshop 3.</p>
+
+  <h3 style="margin-top:32px;font-size:19px;color:var(--navy);">Lab tracks (1:10–1:50)</h3>
+  <p class="sec-sub">Two parallel tracks run at the same time after the prompting primer. Circulate during staging and point people toward the right track. Sample files for both tracks are in the <a href="resources.html">resource library</a>.</p>
+  <div style="margin-top:18px;overflow-x:auto;">
+    <table style="border-collapse:collapse;font-size:14px;color:var(--slate);min-width:640px;">
+      <thead><tr>
+        <th style="text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Track</th>
+        <th style="text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Use case</th>
+        <th style="text-align:left;padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Best for</th>
+        <th style="text-align:left;padding:8px 0;border-bottom:1px solid var(--border);">Files needed</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">1 (anchor)</td><td style="padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Credit memo from a loan file</td><td style="padding:8px 16px 8px 0;border-bottom:1px solid var(--border);">Lending, credit, commercial banking</td><td style="padding:8px 0;border-bottom:1px solid var(--border);">Sample loan file or own loan docs</td></tr>
+        <tr><td style="padding:8px 16px 8px 0;">2</td><td style="padding:8px 16px 8px 0;">Variance analysis commentary</td><td style="padding:8px 16px 8px 0;">Finance, FP&amp;A, accounting</td><td style="padding:8px 0;">Balance sheet, income statement, GL detail</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sec-sub" style="margin-top:16px;">Both tracks: one folder, Sonnet, approvals on, acceptance test written before starting. If a participant's files do not fit either track clearly, put them in Track 1 with the sample loan file.</p>
+
+  <div class="tip-trick" style="margin-top:18px;">
+    <div class="tip-trick-icon">📊</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Track 2 facilitator notes</div>
+      <p>If they only have one file: the prompt still works — Cowork will flag what is missing, a useful demo of honest behavior. If the output is too generic: "Add one sentence — 'The material variances this period are in [category].' Rerun." If someone asks to switch to Opus: hold the line. Document reading and drafting is Sonnet territory.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:18px;">
+    <div class="tip-trick-icon">🚧</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Hold the line</div>
+      <p>Least-privilege folder access and approvals on for outside content are not optional during the lab. Do not wait for a perfect first pass. Make sure everyone finishes a deliverable.</p>
     </div>
   </div>
 </div>
