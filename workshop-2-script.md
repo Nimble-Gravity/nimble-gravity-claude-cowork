@@ -16,6 +16,10 @@ today it produces a fuller **credit memo with flagged risks**. On the
 
 **Legend:** **[SAY]** talk track · **[DO]** live demo · **[THEY]** participants act · **[NOTE]** facilitator note · **[POLL]** Teams poll (pre-build — see prep)
 
+**Follow-along:** the microsite tracks this script slot-by-slot. Participant **home base is the
+[Workshop 2 hub](pages/workshops/module-2-workshop.html)** — the four lessons, the lab (with both track
+prompts in tabs), and the downloads all hang off it. Each slot below names the page to be on.
+
 ---
 
 ## Pre-session prep
@@ -55,6 +59,10 @@ covered what Cowork is, how it differs from chat, and your first delegation. Tod
 use cases, how to work effectively without overspending, and a task you will run end to end to a finished
 deliverable. The thread across all four workshops: W1 gave you the setup, today gives you the workflow, W3
 packages it as a reusable skill, and W4 governs and scales it. Keep that arc in mind as we go."
+
+**[DO] — home base:** "Open the **[Workshop 2 hub](pages/workshops/module-2-workshop.html)** now — that's your
+page for today; every lesson, the lab, and the downloads hang off it, and I'll call out which one to open as
+we go."
 
 **[POLL] — usage pulse (drop now):** "Since Workshop 1, how much have you used Cowork?" — *Ran a real task, it
 saved me time · Tried it, output needed work · Opened it but didn't finish · Haven't yet.*
@@ -129,7 +137,9 @@ per drive.** This is the control story you'll show IT in Workshop 4."
 ---
 
 ## Demo · 0:35–0:55 (20 min) — A credit memo from a loan file
-*Asset: `assets/demo/sample-loan-file.md` (the W1 loan file). Prompt below is on the facilitator guide.*
+*Asset: `assets/demo/sample-loan-file.md`. Prompt below is on the facilitator guide (and it's the Track 1 tab
+on the lab page). **Follow along →** participants watch; the loan file downloads from the
+[resource library](pages/workshops/resources.html) if they want to try it after.*
 
 **[DO]** Grant Cowork **only** the `loan-demo` folder. **[NOTE]** Say least privilege out loud — one folder,
 not a parent. **[DO]** Set the model to **Sonnet.** **[SAY]** "Sonnet for this — it's document work, not a
@@ -155,6 +165,8 @@ catch it.** That's why we keep least privilege and approvals on for anything fro
 ---
 
 ## Discuss · 0:55–1:05 (10 min) — Shortlist your use cases
+*Follow along: Lesson 4 (Use Cases by Industry).*
+
 **[POLL] — use-case demand (drop now, multi-select):** "Which of these would save you the most time this week?
 Pick up to two." — *Credit memo from a loan file · Deposit / treasury relationship summary · Fraud / AML alert
 triage → brief · Loan terms compared across a portfolio · Variance analysis / financial commentary · Something
@@ -212,7 +224,8 @@ demand map** — export it. The top two also tell you which lab track will be bu
 
 **Track 2 — Variance analysis commentary** (finance, FP&A, accounting): Point Cowork at a balance sheet or income statement plus GL detail and ask for written variance commentary. No personal file? Use the **sample variance dataset** from the resource library.
 
-Either track: one folder, one task. Grant only that folder. Sonnet, approvals on."
+Either track: one folder, one task. Grant only that folder. Sonnet, approvals on. **Grab your track's
+ready-made prompt from the tabs on the lab page (Lesson 7).**"
 
 **[THEY] — write the acceptance test FIRST:** "One sentence: what does 'done' mean? Write it before you start
 — you'll **reuse this exact test in Workshop 3** when you turn the job into a skill."
@@ -229,7 +242,8 @@ Track 1. Redirect finance and FP&A participants to Track 2. Hold the line on lea
 approvals on for anything outside the bank. Do not wait for 100% quality on the first pass. Make sure everyone
 finishes a deliverable.
 
-**Track 1 prompts are on the facilitator guide. Track 2 prompt** — [THEY paste this]:
+**Both track prompts live on the lab page (Lesson 7), in the Track 1 / Track 2 tabs — that's where
+participants copy them from.** For your reference, the Track 2 prompt:
 > *"Read the financial files in this folder. Draft variance analysis commentary for the balance sheet and
 > income statement line items that show the most material movement. For each variance: name the line item,
 > state the direction and approximate size of the change, and give a plain-language explanation of what is
@@ -267,7 +281,8 @@ good instructions in a skill are exactly what fix it."
 ## Close · 1:58–2:00 (2 min) — Homework + what's next
 **[SAY] — homework:** "Keep your **deliverable, your acceptance test, and your improvement notes.** Run your
 shortlisted use case once more this week, and bring the **one recurring workflow** you'd most want to
-standardize — that's what we turn into a skill next time."
+standardize — that's what we turn into a skill next time." *(homework recap on the
+[pre-work page](pages/workshops/pre-work.html#workshop-2).)*
 
 **[SAY] — next:** "Workshop 3 — **Build a Skill**: decompose the workflow, the authoring standards, and ship a
 working `.skill`."
