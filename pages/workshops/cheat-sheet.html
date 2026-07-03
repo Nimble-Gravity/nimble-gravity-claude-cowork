@@ -35,7 +35,7 @@
 <!-- PRINT BUTTON -->
 <div class="section" id="models">
   <div class="syllabus-print-wrap" style="display:flex;justify-content:flex-end;margin-bottom:24px;">
-    <button class="syllabus-print" type="button" onclick="window.print()">&#9113; Print this page</button>
+    <button class="syllabus-print" type="button" onclick="printPage()">⎙ Print this page</button>
   </div>
 
   <div class="sec-eyebrow">01 — Models</div>
@@ -202,5 +202,8 @@
 </div>
 
 <div class="page-footer"></div>
+<script>
+function printPage() { window.print(); }
+</script>
 </body>
 </html>
