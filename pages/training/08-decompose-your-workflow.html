@@ -29,10 +29,36 @@
 <div class="page-header" id="intro">
   <div class="eyebrow">Workshop 3 · Lesson 1 of 4</div>
   <h1 class="title">Decompose Your <em>Workflow</em></h1>
-  <p class="subtitle">A skill is only as good as the thinking behind it. Before you write any <code>SKILL.md</code>, map the workflow into a plan: the steps, the data each one needs, and a clear picture of what good output looks like. That plan becomes the skill's specification.</p>
+  <p class="subtitle">A skill is a reusable instruction set that fires automatically when the situation matches — not a prompt you type each time. This lesson starts by defining what a skill actually is, then shows you how to map the workflow you will turn into one: steps, data sources, and a clear picture of good versus bad output.</p>
   <div class="header-phase">
     <div class="header-phase-dot" style="background:var(--blueD)"></div>
     Build a Skill · ~20 min
+  </div>
+</div>
+
+<!-- WHAT IS A SKILL -->
+<div class="section" id="what">
+  <div class="sec-eyebrow">00 — What is a skill</div>
+  <h2 class="sec-title">A reusable instruction set that <em>fires automatically</em></h2>
+  <p class="sec-sub">In Workshops 1 and 2 you typed a prompt to describe each task. A skill changes that: it holds the task description, and Cowork reads it at startup. When the situation matches the skill's description, Cowork routes to it — you do not have to describe the task every time.</p>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Prompt vs skill</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">A prompt you type each time is a one-off delegation — you describe the task, Cowork runs it, done. A skill is that same instruction set installed once. Cowork reads the skill's description at startup and selects it automatically when you ask for a matching task. You just work; Cowork routes to the right tool.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The file</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">A skill is a folder containing one file: <code>SKILL.md</code>. YAML frontmatter at the top gives it a name and a description. A Markdown body below holds the instructions. The same file runs in Claude Cowork and Claude Code on the open <strong>Agent Skills</strong> standard — one skill, both surfaces.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:28px;">
+    <div class="tip-trick-icon">&#8635;</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">The Workshop 2 through-line</div>
+      <p>In Workshop 2 you refined a prompt over a few sessions until it reliably worked. A skill is that prompt packaged — so anyone on your team gets the same quality result without having to rediscover the right words. That is what this workshop builds.</p>
+    </div>
   </div>
 </div>
 
