@@ -70,14 +70,14 @@
         "Upload 'interview-notes-jmalik.txt' and 'raw-notes.txt' into one session.",
         "Prompt Cowork to first evaluate the candidate (your Room 3 skill should fire), then fold that evaluation into a client status update (the Room 2 skill should fire).",
         "Verify both skills triggered — the output should show the four evaluation sections nested inside the status update template with the firm's footer.",
-        "Run the provided QA checklist prompt: 'Check this document against qa-checklist.txt and report a pass count.'",
-        "The unlock code is the pass count followed by the candidate's verdict. Example format: 7Hold"
+        "Run the QA checklist prompt in Cowork: 'Check this document against qa-checklist.txt. For each item, state whether it passes or fails and briefly why. Then report the total pass count.'",
+        "The unlock code is the total pass count followed by the candidate's verdict word. Example format: 7Hold"
       ],
       "codePlaintext": "8Advance",
       "codeHash": "GENERATE_WITH_SCRIPT",
       "hints": [
-        "If only one skill fired, your prompt probably only expressed one intent. State both outcomes in one request: evaluate, then format as a client status update.",
-        "The QA checklist has 8 items; a correctly chained document passes them all."
+        "If only one skill fired, your prompt probably only expressed one intent. State both outcomes in one request: evaluate the candidate, then format the result as a client status update.",
+        "The checklist has 8 items. If your count is under 8, look at which items failed. Items 6 or 7 failing means your Candidate Evaluator skill needs fixing — go back to Room 3, update the skill to name all four required sections explicitly, and constrain the Recommendation to exactly one of: Advance, Hold, Decline."
       ],
       "skillsTaught": ["Chaining multiple skills in one workflow", "Prompting for multi-intent tasks", "QA against a checklist"]
     }

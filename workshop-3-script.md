@@ -339,11 +339,34 @@ three-word verdict as constraints — not just mention them."*
 **Room 4 — The Playbook Door (chain + QA):**
 **[NOTE]** Teams use one prompt to invoke both the repaired Client Formatter (Room 2) and the
 Candidate Evaluator (Room 3), then run the QA checklist against the output. Both skills must fire from
-a single multi-intent prompt for the door to open. The QA checklist in `qa-checklist.txt` is the
-grading rubric — make sure teams know to run it explicitly, not just eyeball the output. Codes are
-case-insensitive.
+a single multi-intent prompt for the door to open. Codes are case-insensitive. The QA checklist prompt
+(in the lab step and in `qa-checklist.txt`) now asks for a per-item breakdown — teams see exactly which
+items pass or fail, not just a total count.
 
-**[>>]** *Room 4 is where skill composability becomes real.* The key insight: one prompt can invoke multiple skills if each skill's description is specific enough to match distinct intent in the same request. Teams who wrote vague descriptions in Room 2 discover here that their skill doesn't co-fire — it's crowded out by the other one. This is the production failure mode: skill collision caused by under-specified descriptions. It's a difficult insight to teach abstractly; the vault delivers it experientially.
+**Room 4 has two distinct failure modes — know which one you're looking at:**
+
+**Failure mode A — skills don't chain (prompting issue).** Only one skill fires. The output has either
+the status update template OR the candidate evaluation, not both. Hint 1 addresses this: "State both
+outcomes in one request — evaluate the candidate, then format as a client status update."
+
+**Failure mode B — skills chain but Room 3's output is wrong (skill-writing issue).** Both skills
+fire, but the Candidate Evaluator doesn't enforce the right format. QA items 6 or 7 fail:
+- Item 6 fails → skill's section names don't match ("Key Strengths" instead of "Strengths," etc.)
+- Item 7 fails → Recommendation isn't constrained to Advance/Hold/Decline (output says something like
+  "I recommend we move forward with Jasmine")
+
+Teams stuck here often try to rewrite the Room 4 prompt, which won't fix it. **Direct them back to
+Room 3:** "Your skill needs to name the four sections explicitly and add a rule that the Recommendation
+must be exactly one of: Advance, Hold, or Decline. Fix the skill, reinstall it, and rerun Room 4."
+Hint 2 in the vault tells them the same thing once they use it.
+
+**[>>]** *Why two failure modes matter for facilitation.* The vault's per-item QA breakdown makes
+failure mode B self-diagnosable in most cases — teams that see "Item 7: FAIL — recommendation not one
+of the three allowed words" know what to fix without a hint. But some teams will still try to fix
+the Room 4 prompt instead of the Room 3 skill, because "fix the most recent thing" is the natural
+instinct. The facilitator's job in that moment is to redirect: the problem is upstream, in the skill
+that was written in the previous room. This is actually the highest-value learning moment of the
+entire vault — it proves that bad skills create downstream failures, not just bad prompts.
 
 **[NOTE — facilitator view]** Monitor progress through [admin.html](escape-room/admin.html). If a
 team hasn't entered Room 2 by the 15-minute mark, drop a team-specific hint in their breakout chat.
