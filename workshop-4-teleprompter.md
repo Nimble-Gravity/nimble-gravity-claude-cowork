@@ -632,15 +632,39 @@ That is what a governance decision actually looks like,
 and it's what your one-pager has to show.
 
 [TEAM ANNOUNCEMENTS — 4 MIN]
+[POLL FIRST. DO NOT SKIP THIS.]
 
 Right — the lab.
 
-You'll play in teams of two to four.
-Mix the teams — put an IT or compliance person
+Quick show of hands, or drop a 1 in the chat.
+
+Who has Cowork open and working
+on this machine, right now —
+installed, and you've actually used it?
+
+[COUNT THEM.]
+[EVERY TEAM NEEDS ONE CONFIRMED USER AS DRIVER.]
+[IF THERE AREN'T ENOUGH, MAKE FEWER, LARGER TEAMS.]
+
+Good. Teams of two to four.
+
+Mix them — an IT or compliance person
 with the business users.
 
-One person drives Cowork and shares their screen.
-Everyone else advises.
+The person who just told me Cowork is working
+is your driver, and they share their screen.
+
+Everyone else advises —
+and advising is the real work here, not typing.
+
+If you're not driving, you're not spectating.
+
+One of you reads the rubric or the checklist aloud.
+One of you keeps time against the forty minutes.
+One of you writes the finding down before it's typed.
+
+Those are real jobs.
+The team is slower without them.
 
 Two hints per station.
 The first is free. The second adds two minutes.
@@ -655,7 +679,7 @@ You have forty minutes.
 1:04 - 1:10   BREAK
 ================================================================
 
-During the break — three things.
+During the break — four things.
 
 Confirm all six lab files are downloaded
 into one folder you can grant Cowork access to.
@@ -663,11 +687,17 @@ into one folder you can grant Cowork access to.
 Open the Control Room in a new tab.
 Not the lesson page — the Control Room itself.
 
-Find your breakout room, and decide who drives.
+Find your breakout room.
 
-[CONFIRM FILES IN CHAT BEFORE OPENING THE CLOCK]
-[WAIT 60 SECONDS FOR STRAGGLERS RATHER THAN
-STARTING WITH FILE-LESS TEAMS]
+And drivers — open Cowork now
+and grant it that folder,
+so we're not doing it on the clock.
+
+[INSTALL TRIAGE — RUN IT, DON'T JUST ANNOUNCE IT]
+[Every driver confirms in chat: Cowork open AND folder granted.]
+[Chase the silent ones.]
+[If a team's driver can't get there, MERGE that team
+into another one now — don't send them in to fail alone.]
 
 
 ================================================================
@@ -685,10 +715,28 @@ Game in one window, Cowork in the other.
 Go.
 
 [PACING CUES — DO NOT READ ALOUD]
+[YOU CANNOT SEE PROGRESS — local-only leaderboard.
+ROTATE EVERY 6-7 MIN, one lap of all teams, split with Kevin.
+Ask one question: "which station are you on?"]
 [15 MIN: any team not past Station 2 — drop a hint in their chat]
-[30 MIN: teams stuck in Station 3 — push them to sanity-check by hand]
+[25 MIN: any team not into Station 3 — GIVE THEM THE CODES.
+Say: "I'm handing you these so you get to the part that matters —
+the one-pager is what you're taking away today."]
+[30 MIN: teams stuck in Station 3 — offer the escape hatch below]
 [35 MIN: teams in Station 4 with no code — tell them to SCORE before they polish]
 [1:47 — CALL TIME. Ask each team to note where they stopped.]
+
+[STATION 3 ESCAPE HATCH — say it without ceremony]
+If the skill mechanics are fighting you,
+drop the skill and just ask Cowork directly —
+
+"Analyse the analytics export.
+Give me the count of distinct users across the week,
+and the department with the highest share
+of its dispatch turns running on Opus."
+
+Same two numbers. Same code.
+The skill is the ideal version. The analysis is the requirement.
 
 [STATION 4 FAILURE MODES]
 [A — arguing with the checklist: "The checklist is the examiner. Add the sentence."]

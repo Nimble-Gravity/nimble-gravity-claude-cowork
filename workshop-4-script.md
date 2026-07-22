@@ -463,10 +463,33 @@ engage here finish the lab meaningfully faster.
 Cowork is safe. We decided **which work goes where.** That's what a governance decision actually looks
 like, and it's what your one-pager has to show."
 
-**[DO] — Control Room team announcements (4 min):** "You'll play in teams of 2–4. **Mix the teams — put
-an IT or compliance person with the business users.** One person drives Cowork and shares their screen;
-everyone else advises. Two hints per station: first is free, second adds 2 minutes. Wrong codes cost nothing
-but time. Forty minutes." Announce breakout assignments and drivers.
+**[DO] — POLL FIRST, then announce teams (4 min).** Do not skip the poll.
+
+> **[SAY]** *"Quick show of hands, or drop a 1 in the chat: who has Cowork open and working on this
+> machine right now — installed, and you've used it?"*
+
+**[NOTE]** Count them. **Every team needs at least one confirmed Cowork user, and that person is the
+driver.** The invite went wide and this room is a mixed split — some of you have shipped a skill, some
+have never opened the app. If you assign teams without checking, you will get a team of four people
+who all thought someone else had it working, and they will lose the whole forty minutes.
+
+If there aren't enough confirmed users for four teams, **make fewer, larger teams.** Three teams of
+five that can all actually run Cowork beats five teams of three where two are dead on arrival.
+
+**[SAY] — then announce:** "Teams of 2–4. **Mix them — an IT or compliance person with the business
+users.** The person who just told me Cowork is working is your driver, and they share their screen.
+Everyone else advises — and advising is the real work here, not typing. Two hints per station: first
+is free, second adds 2 minutes. Wrong codes cost nothing but time. Forty minutes."
+
+**[SAY] — give the non-drivers a job, by name:** "If you're not driving, you're not spectating. One of
+you reads the rubric or the checklist aloud. One of you keeps time against the forty minutes. One of
+you writes down the finding before it's typed. Those are real jobs and the team is slower without them."
+
+**[>>]** *This is the single beat that decides whether breakouts work today.* In Workshop 3 everyone
+present had Cowork running, so drivers were interchangeable. Today they are not, and the failure is
+silent — a team discovers at minute six that nobody can grant a folder, and by the time they flag it
+you're twenty minutes in. Sixty seconds of polling removes it. Assigning the non-drivers explicit
+roles is what keeps the observers from going quiet, which is the second-most-likely failure.
 
 **[>>]** *Insist on mixed teams.* Station 1 and Station 3 favour business users comfortable delegating to
 Cowork; Station 2 favours whoever knows what SCIM is. Homogeneous teams stall on one of the two. Mixed
@@ -477,9 +500,15 @@ quietly, the real deliverable of this workshop.
 
 ## Break · 1:04–1:10 (6 min)
 
-**[DO]** "During the break: confirm all **six** lab files are downloaded into one folder you can grant
-Cowork access to. Open the [Control Room](control-room/) in a new tab — not the lesson page. Find your
-breakout room. Decide who drives."
+**[DO]** "During the break, four things. Confirm all **six** lab files are downloaded into one folder
+you can grant Cowork access to. Open the [Control Room](control-room/) in a new tab — not the lesson
+page. Find your breakout room. And **drivers — open Cowork now and grant it that folder**, so we're not
+doing it on the clock."
+
+**[NOTE — run an install triage during the break, don't just announce it.]** Ask every driver to
+confirm in chat that Cowork is open *and* the folder is granted. Chase the silent ones. If a team's
+driver can't get there, **merge that team into another one now** rather than sending them into a
+breakout to discover it alone. A team of five that works beats two teams where one is dead.
 
 **[>>]** *Staging break, not a rest break — same as W3.* Teams arriving without files staged burn five
 minutes of a forty-minute clock. Confirm in Teams chat before you open the clock; wait the extra 60
@@ -492,10 +521,44 @@ seconds for stragglers rather than starting with file-less teams.
 *Follow along: Lesson 5. Open at [control-room/](control-room/) — participants in breakouts. Keep the
 [facilitator view](control-room/admin.html) open (local-only this cohort — see prep note 6).*
 
-> **Derrikk runs the room; Kevin floats.** You own the clock, the facilitator view, and the hint calls.
-> Kevin is most useful dropping into breakouts and answering IT questions in chat — **he does not need
-> the main screen for the next 40 minutes.** Agree before the session who takes which breakouts so you
-> aren't both landing in the same one.
+> **Derrikk runs the room; Kevin floats.** You own the clock and the hint calls. Kevin is most useful
+> dropping into breakouts and answering IT questions in chat — **he does not need the main screen for
+> the next 40 minutes.** Agree before the session who takes which breakouts so you aren't both landing
+> in the same one.
+
+### ⚠️ Two things that will bite in a mixed-install room
+
+**1. You cannot see progress. Go and look.**
+The leaderboard is local-only this cohort, so the facilitator view shows nothing for breakout teams.
+**Rotate on a fixed cadence — every 6–7 minutes, one lap of all teams, split with Kevin.** Ask one
+question when you drop in: *"which station are you on?"* A team that's still on Station 1 at the
+15-minute mark is stuck and won't tell you unprompted.
+
+**2. Station 3 is the choke point — have the escape hatch ready.**
+It asks teams to author *and install* a Cowork skill. A Workshop 3 veteran does that in five minutes;
+someone who opened Cowork this morning does not. **If a team is struggling with the skill mechanics,
+let them drop the skill and just ask Cowork for the analysis directly:**
+
+> *"Analyse `analytics-export.csv`. Give me the count of distinct users across the week, and the
+> department with the highest share of its dispatch turns running on Opus."*
+
+That produces the same two numbers and therefore the same code. The skill is the ideal version; the
+analysis is the requirement. **Say this without ceremony** — don't make it sound like a consolation.
+
+### Giving codes to keep teams moving
+
+The stations are linear and code-gated, so a team stuck on Station 2 **cannot skip ahead to the
+capstone.** That matters, because Station 4 is the actual deliverable.
+
+**At the 25-minute mark, any team not into Station 3 gets given the codes they're missing.** Say it
+plainly: *"I'm going to hand you these so you get to the part that matters — the one-pager is the
+thing you're taking away from today."*
+
+**[>>]** *Handing over a code feels like breaking the game. It isn't.* The game exists to produce the
+control narrative; a team that spends forty minutes perfecting Station 2 and never writes the
+one-pager has had a worse session than one that was handed two codes and spent fifteen minutes
+arguing about the audit position. Protect the deliverable, not the puzzle. The answer key is in the
+facilitator appendix — keep it open and unshared.
 
 **[DO]** "The Control Room is open. Clock starts when your team enters a name. One driver in Cowork, the
 rest advising. Game in one window, Cowork in the other. Go."
