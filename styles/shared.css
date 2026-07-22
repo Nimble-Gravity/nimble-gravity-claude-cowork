@@ -481,8 +481,8 @@ section.section {
   padding: 72px max(64px, calc((100% - 1280px) / 2));
 }
 section.section:last-of-type { border-bottom: none; }
-section.section.dark,
-.section.dark {
+section:is(.section.dark,.section-dark,.section--dark),
+:is(.section.dark,.section-dark,.section--dark) {
   background: var(--navy);
   color: var(--white);
   border-bottom: 1px solid rgba(255,255,255,.12);
@@ -507,12 +507,12 @@ section.section-inner { max-width: 100%; }
   height: 1px;
   background: var(--slatel);
 }
-section.section.dark .section-label,
-.section.dark .section-label {
+section:is(.section.dark,.section-dark,.section--dark) .section-label,
+:is(.section.dark,.section-dark,.section--dark) .section-label {
   color: var(--mint-on-dark);
 }
-section.section.dark .section-label::before,
-.section.dark .section-label::before {
+section:is(.section.dark,.section-dark,.section--dark) .section-label::before,
+:is(.section.dark,.section-dark,.section--dark) .section-label::before {
   background: var(--mint-on-dark);
 }
 section.section h2 {
@@ -527,15 +527,15 @@ section.section h2 em {
   font-style: italic;
   color: var(--amber);
 }
-section.section.dark h2, .section.dark h2 { color: var(--white); }
-section.section.dark h2 em, .section.dark h2 em { color: var(--amber); }
+section:is(.section.dark,.section-dark,.section--dark) h2, :is(.section.dark,.section-dark,.section--dark) h2 { color: var(--white); }
+section:is(.section.dark,.section-dark,.section--dark) h2 em, :is(.section.dark,.section-dark,.section--dark) h2 em { color: var(--amber); }
 .section-sub {
   font-size: 0.87rem;
   color: var(--slatel);
   font-style: italic;
   margin-bottom: 36px;
 }
-section.section.dark .section-sub, .section.dark .section-sub { color: var(--slatel); }
+section:is(.section.dark,.section-dark,.section--dark) .section-sub, :is(.section.dark,.section-dark,.section--dark) .section-sub { color: var(--slatel); }
 .section-body {
   font-size: 0.92rem;
   color: var(--slate);
@@ -2676,8 +2676,8 @@ section.section.dark .section-sub, .section.dark .section-sub { color: var(--sla
 
 .section-dark .sec-sub,
 .section--dark .sec-sub,
-section.section.dark .section-sub,
-.section.dark .section-sub,
+section:is(.section.dark,.section-dark,.section--dark) .section-sub,
+:is(.section.dark,.section-dark,.section--dark) .section-sub,
 .section-dark .bp-body,
 .section--dark .bp-body,
 .skill-eq-body,
@@ -3010,10 +3010,10 @@ footer,
   gap: 12px;
 }
 
-.section.dark .dev-card,
-.section.dark .dev-state,
-.section.dark .dev-lane,
-.section.dark .dev-flow-step {
+:is(.section.dark,.section-dark,.section--dark) .dev-card,
+:is(.section.dark,.section-dark,.section--dark) .dev-state,
+:is(.section.dark,.section-dark,.section--dark) .dev-lane,
+:is(.section.dark,.section-dark,.section--dark) .dev-flow-step {
   background: rgba(255,255,255,.04);
   border-color: rgba(255,255,255,.08);
 }
@@ -3051,10 +3051,10 @@ footer,
   color: var(--navy);
 }
 
-.section.dark .dev-card h3,
-.section.dark .dev-state h3,
-.section.dark .dev-lane h3,
-.section.dark .dev-flow-step h3 {
+:is(.section.dark,.section-dark,.section--dark) .dev-card h3,
+:is(.section.dark,.section-dark,.section--dark) .dev-state h3,
+:is(.section.dark,.section-dark,.section--dark) .dev-lane h3,
+:is(.section.dark,.section-dark,.section--dark) .dev-flow-step h3 {
   color: var(--white);
 }
 
@@ -3069,10 +3069,10 @@ footer,
   color: var(--slate);
 }
 
-.section.dark .dev-card p,
-.section.dark .dev-state p,
-.section.dark .dev-lane p,
-.section.dark .dev-flow-step p {
+:is(.section.dark,.section-dark,.section--dark) .dev-card p,
+:is(.section.dark,.section-dark,.section--dark) .dev-state p,
+:is(.section.dark,.section-dark,.section--dark) .dev-lane p,
+:is(.section.dark,.section-dark,.section--dark) .dev-flow-step p {
   color: var(--slatel);
 }
 
@@ -3085,7 +3085,7 @@ footer,
   color: var(--navy);
 }
 
-.section.dark .dev-quote {
+:is(.section.dark,.section-dark,.section--dark) .dev-quote {
   border-left-color: rgba(125,211,232,.4);
   color: #d9eff7;
 }
@@ -3100,7 +3100,7 @@ footer,
   color: var(--text-muted);
 }
 
-.section.dark .dev-attribution {
+:is(.section.dark,.section-dark,.section--dark) .dev-attribution {
   color: rgba(255,255,255,.58);
 }
 
@@ -3155,7 +3155,7 @@ footer,
   color: var(--text-muted);
 }
 
-.section.dark .dev-state-label {
+:is(.section.dark,.section-dark,.section--dark) .dev-state-label {
   color: rgba(255,255,255,.62);
 }
 
@@ -3169,8 +3169,8 @@ footer,
   color: var(--navy);
 }
 
-.section.dark .dev-chip,
-section.section.dark .dev-chip,
+:is(.section.dark,.section-dark,.section--dark) .dev-chip,
+section:is(.section.dark,.section-dark,.section--dark) .dev-chip,
 .hero .dev-chip,
 section.hero .dev-chip {
   background: rgba(125,211,232,.08);
@@ -3230,7 +3230,7 @@ section.hero .dev-chip {
   font-weight: 700;
 }
 
-.section.dark .dev-flow-num {
+:is(.section.dark,.section-dark,.section--dark) .dev-flow-num {
   background: rgba(125,211,232,.15);
   color: #d9eff7;
 }
@@ -3249,7 +3249,7 @@ section.hero .dev-chip {
   color: var(--navy);
 }
 
-.section.dark .dev-lane-label {
+:is(.section.dark,.section-dark,.section--dark) .dev-lane-label {
   color: #d9eff7;
 }
 
@@ -3261,7 +3261,7 @@ section.hero .dev-chip {
   border-top: 1px solid var(--border);
 }
 
-.section.dark .dev-lane-row {
+:is(.section.dark,.section-dark,.section--dark) .dev-lane-row {
   border-top-color: rgba(255,255,255,.08);
 }
 
@@ -3276,7 +3276,7 @@ section.hero .dev-chip {
   color: var(--navy);
 }
 
-.section.dark .dev-lane-topic {
+:is(.section.dark,.section-dark,.section--dark) .dev-lane-topic {
   color: var(--white);
 }
 
@@ -3288,7 +3288,7 @@ section.hero .dev-chip {
   text-align: right;
 }
 
-.section.dark .dev-lane-copy {
+:is(.section.dark,.section-dark,.section--dark) .dev-lane-copy {
   color: var(--slatel);
 }
 
