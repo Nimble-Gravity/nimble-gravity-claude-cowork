@@ -92,12 +92,16 @@ supports **group-level overrides tied to SCIM groups**:
 
 | Preference | Meaning |
 |---|---|
-| Installed by default | Present on install, member may remove |
-| **Required** | Always installed, member **cannot** remove |
-| Available | Member may install it if they choose |
-| Not available | Hidden from the group |
+| **Required** | Automatically installed for all members, **without the option to remove it** |
+| Installed by default | Automatically installed, but members can uninstall |
+| Available for install | Listed in the catalog; members self-install |
+| Not available | Hidden from the catalog entirely |
 
 **Rule:** a plugin carrying a mandatory control — a disclaimer, a review gate, a retention notice —
-must be set so members cannot remove it. "Available" is not a control.
+must be set so members cannot remove it. Merely offering it is not a control.
+
+Per-group overrides are set from the **Custom access** column → **Add groups**. Where a member is in
+several groups, **the most permissive setting wins**, in the order above — so "Not available" for one
+group does not block someone who is also in a more permissive group.
 
 Org-managed plugins cannot be edited by members: **the owner pushes, members copy.**

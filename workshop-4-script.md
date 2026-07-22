@@ -159,8 +159,23 @@ unit an administrator can control.** A skill is a folder. A plugin is a bundle �
 sub-agents, commands, hooks — and critically, it's the thing your admin can *require*, *offer*, or
 *hide* from a specific group. That's why it's in the governance session."
 
-**[SAY]** "Two ways to stand up a private marketplace: ZIP upload while you're iterating, GitHub sync
-when you want version control — syncs take up to half an hour, cap of 100 plugins, 50 MB per file."
+**[SAY] — the click-path, because this room will actually do it:** "It all lives at **Organization
+settings → Plugins**. Prerequisite first: **Cowork *and* Skills both have to be enabled** — if that page
+looks empty, that's why. Three ways in. **Add plugins → Browse Anthropic sources** pulls in Anthropic's
+own marketplaces; Knowledge Work is already there by default. **Add plugins → Upload a file** creates
+your own marketplace from `.zip` files — quick to iterate, and uploading the same plugin name overwrites
+the previous version. **Add plugin → GitHub** syncs from a repo as `owner/repo` — it has to be private
+or internal, public repos are rejected, and syncs fire on a version-bump PR merging to the default
+branch, not on a direct push."
+
+**[SAY] — the limits:** "50 MB a plugin. 100 plugins if you upload by hand, 500 if you sync from GitHub.
+Names are lowercase-with-hyphens, 64 characters."
+
+**[>>]** *Give the click-path even though you can't demo it.* Neither of us has console access this
+cohort, and the audience is the people who'll be clicking these buttons next week. Naming the exact
+menu path and button labels is the next best thing to showing it, and it's honest — you're describing
+documented behaviour rather than pretending to a tenant you don't have. Point them at Lesson 1 on the
+site, which has the same path written out with the limits.
 
 **[>>]** *Resist the urge to re-teach plugin authoring here.* In previous runs this slot expanded to
 fifteen minutes and ate the RBAC content. The business users already built skills in W3, and the IT

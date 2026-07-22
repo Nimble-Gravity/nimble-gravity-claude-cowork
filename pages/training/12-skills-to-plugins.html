@@ -82,15 +82,51 @@
   <div class="tip-trick" style="margin-top:32px;">
     <div class="tip-trick-icon">🏛️</div>
     <div class="tip-trick-copy">
-      <div class="tip-trick-label">Standing up a private marketplace</div>
-      <p>Team and Enterprise owners publish a private marketplace two ways. <strong>ZIP upload</strong> is quick to iterate while you're still refining a plugin. <strong>GitHub sync</strong> is version-controlled from a private repo, with syncs that can take up to half an hour. Two limits to plan around: 100 plugins, and 50 MB per file. How plugins then reach people — required, available, or hidden, per group — is the access question, and that's the next lesson.</p>
+      <div class="tip-trick-label">Prerequisite — both switches, not one</div>
+      <p><strong>Cowork <em>and</em> Skills must both be enabled for the organization</strong> before you can manage plugin marketplaces at all. If the Plugins area looks empty or unavailable, this is almost always why.</p>
+    </div>
+  </div>
+</div>
+
+<!-- HOW TO ADD ONE -->
+<div class="section" id="adding">
+  <div class="sec-eyebrow">03 — The admin click-path</div>
+  <h2 class="sec-title">Adding a plugin, <em>step by step</em></h2>
+  <p class="sec-sub">Everything below lives at <strong>Organization settings → Plugins</strong>. Three ways in, depending on where the plugin comes from. <em>Verified against Anthropic's admin documentation, 22 July 2026.</em></p>
+
+  <div class="bp-grid--light" style="margin-top:28px;">
+    <div class="bp-item">
+      <div class="bp-num">01</div>
+      <div class="bp-title">Anthropic's own marketplaces</div>
+      <div class="bp-body"><strong>Add plugins → Browse Anthropic sources → Add</strong> on each marketplace you want. <strong>Knowledge Work is already added by default</strong> — if you don't want it, open its menu (upper right) and choose <em>Remove</em>.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">02</div>
+      <div class="bp-title">Upload your own — quick iteration</div>
+      <div class="bp-body"><strong>Add plugins → Upload a file → Upload to a new marketplace</strong> (first time only), name the marketplace, then drag in <code>.zip</code> files and click <strong>Upload</strong>. Best while you're still refining. Uploading a plugin with an existing name <strong>overwrites the previous version automatically</strong> — that's your update mechanism, and your accident.</div>
+    </div>
+    <div class="bp-item">
+      <div class="bp-num">03</div>
+      <div class="bp-title">GitHub sync — plugins as code</div>
+      <div class="bp-body"><strong>Add plugin → GitHub</strong>, then enter the repo as <code>owner/repo</code>. The repo must be <strong>private or internal — public repos are rejected</strong> — and the Claude GitHub App must be installed. Then open the marketplace menu and toggle <strong>Sync automatically</strong>. Syncs fire when a PR with a version bump merges to the default branch; <strong>direct pushes don't trigger a sync</strong>.</div>
+    </div>
+  </div>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Limits to plan around</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">50 MB per plugin ZIP · <strong>100 plugins</strong> per manually-uploaded marketplace but <strong>500</strong> via GitHub sync · plugin names max 64 characters, lowercase-with-hyphens (<code>deployment-tools</code>) · 30-minute sync timeout.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Then decide who gets it</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Set an install preference per plugin, and on Enterprise use the <strong>Custom access</strong> column → <strong>Add groups</strong> to override it per group. Changes land on each member's next session or plugin refresh — not instantly. That's the access question, and it's the next lesson.</p>
     </div>
   </div>
 </div>
 
 <!-- DESIGN -->
 <div class="section" id="design">
-  <div class="sec-eyebrow">03 — Design plugins to be trusted</div>
+  <div class="sec-eyebrow">04 — Design plugins to be trusted</div>
   <h2 class="sec-title">Bundle tightly and watch what it can <em>touch</em></h2>
   <p class="sec-sub">Every connector and hook widens what a plugin can do, which is why restraint pays off before you push it to a team.</p>
 

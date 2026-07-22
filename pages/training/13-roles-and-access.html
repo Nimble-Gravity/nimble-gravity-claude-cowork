@@ -145,14 +145,22 @@
     <div class="dev-card">
       <div class="dev-kicker">Four install preferences</div>
       <h3>From Installed by default to Not available</h3>
-      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;"><strong>Installed by default</strong> — present on install, member may remove. <strong>Required</strong> — always installed, member cannot remove. <strong>Available</strong> — member may install it if they choose. <strong>Not available</strong> — hidden from the group. A mandatory disclaimer or review gate has to be non-removable.</p>
-      <div class="dev-quote">Match the preference to whether it's a convenience or a control.</div>
+      <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;"><strong>Required</strong> — automatically installed for all members, <em>without the option to remove it</em>. <strong>Installed by default</strong> — automatically installed, but members can uninstall. <strong>Available for install</strong> — listed in the catalog, members self-install. <strong>Not available</strong> — hidden from the catalog entirely. A mandatory disclaimer or review gate has to be Required; anything else is a suggestion.</p>
+      <div class="dev-quote">Set per-group via the Custom access column → Add groups.</div>
     </div>
     <div class="dev-card">
       <div class="dev-kicker">The edit model</div>
       <h3>Owner pushes, members copy</h3>
       <p style="color:rgba(255,255,255,.65);font-size:15px;line-height:1.65;">Members cannot edit an organization-managed plugin; if they edit files locally, Cowork warns them before an update overwrites the change. To customize, a member copies a template and tweaks their own version — and good changes get folded back into the managed one.</p>
       <div class="dev-quote">One source of truth; everyone else forks from it.</div>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:32px;">
+    <div class="tip-trick-icon">⚠️</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">"Not available" is not a block — the most permissive group wins</div>
+      <p>When a member belongs to several groups with different install preferences, <strong>the most permissive setting applies</strong>, resolved in this order: <strong>Required → Installed by default → Available for install → Not available</strong>. So hiding a plugin from one group achieves nothing if that person is also in a group where it's Required or Available. If a plugin genuinely must not reach someone, the control is their <em>group membership</em>, not the preference. Changes also land on each member's next session or plugin refresh — not instantly.</p>
     </div>
   </div>
 </div>

@@ -95,12 +95,29 @@ covered as the unit of governed distribution, not as an authoring topic.*
 - **Plugin** = bundle of skills + MCP connectors + sub-agents + slash commands + hooks. Works in Cowork +
   Claude Code (not Chat, though bundled skills work in Chat). Layout: `plugin.json` in `.claude-plugin/`;
   `skills/ agents/ hooks/ .mcp.json` at root.
-- **Marketplaces:** built-in Knowledge Work (default) + Financial Services, Legal, Life Sciences; add from GitHub.
-  Team/Enterprise **private marketplaces** via ZIP upload or GitHub sync (≤ 30 min; 100-plugin cap, 50 MB/file).
-  Install prefs: Installed-by-default / Required / Available / Not-available, with **group-level overrides tied
-  to SCIM groups**. **Edit model:** org-managed plugins can't be edited by members — copy/tweak from a template
+- **Marketplaces:** built-in Knowledge Work (added by default; removable) + Financial Services, Legal,
+  Life Sciences. **Edit model:** org-managed plugins can't be edited by members — copy/tweak from a template
   ("owner pushes, members copy"). **Portability:** a skill or plugin authored in the Claude Code structure
   (the superset) runs unchanged in Claude Cowork and Claude Code.
+- **Admin click-path — verified 2026-07-22** (`support.claude.com/en/articles/13837433`). All at
+  **Organization settings → Plugins**. ⚠️ **Prerequisite: Cowork _and_ Skills must both be enabled.**
+  - Anthropic's own: **Add plugins → Browse Anthropic sources → Add**. Knowledge Work is present by
+    default; remove via its menu (upper right) → *Remove*.
+  - Your own, manual: **Add plugins → Upload a file → Upload to a new marketplace** (first time), name it,
+    drag `.zip` files, **Upload**. Same plugin name ⇒ **overwrites the previous version automatically**.
+  - Your own, as code: **Add plugin → GitHub**, repo as `owner/repo`. Must be **private or internal**
+    (public rejected); Claude GitHub App required; then toggle **Sync automatically**. Syncs trigger on a
+    **version-bump PR merging to the default branch — direct pushes do not**.
+  - **Limits:** 50 MB/ZIP · **100 plugins manual, 500 via GitHub sync** · name ≤ 64 chars,
+    lowercase-with-hyphens · 30-minute sync timeout.
+- **Install preferences** (exact labels): **Required** (auto-installed, *cannot* be removed) ·
+  **Installed by default** (auto-installed, member can uninstall) · **Available for install** (in the
+  catalog, self-install) · **Not available** (hidden). Per-group overrides via the **Custom access**
+  column → **Add groups**. Changes apply on the member's **next session or plugin refresh**.
+  ⚠️ **Where a member is in several groups, the MOST PERMISSIVE setting wins** —
+  Required > Installed by default > Available for install > Not available. So "Not available" for one
+  group does **not** block someone who is also in a more permissive group; the real control is group
+  membership.
 
 #### RBAC — roles, groups, capabilities (Enterprise)
 - **Static roles:** **User**, **Admin**, **Owner** (plus a single **Primary Owner** per org; **Billing** and
