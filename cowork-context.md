@@ -92,9 +92,31 @@ and the machine awake for tasks. Launched Jan 12 2026 (macOS preview); GA Apr 9 
 covered as the unit of governed distribution, not as an authoring topic.*
 
 #### Plugins (the distribution unit)
-- **Plugin** = bundle of skills + MCP connectors + sub-agents + slash commands + hooks. Works in Cowork +
-  Claude Code (not Chat, though bundled skills work in Chat). Layout: `plugin.json` in `.claude-plugin/`;
-  `skills/ agents/ hooks/ .mcp.json` at root.
+- **Plugin** = bundle of skills + commands + sub-agents + hooks + MCP servers + **LSP servers** +
+  **monitors** (+ output-styles, themes, `bin/`). Works in Cowork + Claude Code (not Chat, though
+  bundled skills work in Chat).
+- **Layout — verified 2026-07-22** (`code.claude.com/docs/en/plugins-reference`):
+  ```
+  enterprise-plugin/
+  ├── .claude-plugin/plugin.json   # manifest — the ONLY thing in this dir
+  ├── skills/<name>/SKILL.md       # + optional reference.md, scripts/
+  ├── commands/*.md   agents/*.md
+  ├── hooks/hooks.json   .mcp.json   .lsp.json   monitors/monitors.json
+  ├── output-styles/  themes/  bin/  scripts/  settings.json
+  ```
+  ⚠️ **`.claude-plugin/` contains only `plugin.json`. Every other directory must be at the plugin
+  root** — nesting them inside `.claude-plugin/` is the #1 reason a plugin fails to load.
+  - **The manifest is optional.** Without it, components are auto-discovered in default locations and
+    the name comes from the directory. A root `SKILL.md` with no `skills/` dir loads as a single-skill
+    plugin. Set `version` if you do ship a manifest — otherwise every commit is a new version.
+  - **Not everything is Markdown:** skills/commands/agents are `.md`; hooks, MCP, LSP, monitors and
+    themes are **JSON**.
+  - **Reload semantics:** a skill's `SKILL.md` edit applies immediately; changes to `hooks/`,
+    `.mcp.json`, `agents/`, `output-styles/` need `/reload-plugins` or a restart. Matters when pushing
+    a control change — don't assume a new hook is live.
+  - **A `CLAUDE.md` at the plugin root is NOT loaded as context.** Ship standing instructions as a skill.
+  - ⚠️ *Common confusion:* `SKILL.md` + `reference.md` + `scripts/` is the **skill** layout (what sits
+    inside `skills/<name>/`), not the plugin layout. Don't present the two as the same thing.
 - **Marketplaces:** built-in Knowledge Work (added by default; removable) + Financial Services, Legal,
   Life Sciences. **Edit model:** org-managed plugins can't be edited by members — copy/tweak from a template
   ("owner pushes, members copy"). **Portability:** a skill or plugin authored in the Claude Code structure

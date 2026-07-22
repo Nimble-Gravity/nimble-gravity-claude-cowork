@@ -125,8 +125,59 @@
 </div>
 
 <!-- DESIGN -->
-<div class="section" id="design">
-  <div class="sec-eyebrow">04 — Design plugins to be trusted</div>
+<div class="section" id="layout">
+  <div class="sec-eyebrow">04 — What's inside the folder</div>
+  <h2 class="sec-title">The plugin <em>layout</em></h2>
+  <p class="sec-sub">You don't need to author one to govern one, but you do need to recognise a well-formed plugin when someone hands you a ZIP. <em>Verified against Anthropic's plugins reference, 22 July 2026.</em></p>
+
+  <div style="margin-top:24px;background:var(--navy);border:1px solid var(--border);border-radius:10px;padding:22px 24px;overflow-x:auto;">
+<pre style="margin:0;color:var(--white);font-family:'Roboto Mono',monospace;font-size:13px;line-height:1.6;">enterprise-plugin/
+├── .claude-plugin/
+│   └── plugin.json        <span style="opacity:.6"># the manifest — the ONLY thing that lives here</span>
+├── skills/
+│   ├── code-reviewer/
+│   │   └── SKILL.md
+│   └── pdf-processor/
+│       ├── SKILL.md
+│       └── scripts/
+├── commands/              <span style="opacity:.6"># skills as flat .md files</span>
+├── agents/                <span style="opacity:.6"># subagent definitions (.md)</span>
+├── hooks/hooks.json       <span style="opacity:.6"># JSON, not markdown</span>
+├── .mcp.json              <span style="opacity:.6"># MCP servers</span>
+├── .lsp.json              <span style="opacity:.6"># language servers</span>
+├── monitors/monitors.json <span style="opacity:.6"># background monitors</span>
+├── output-styles/  themes/  bin/  scripts/
+└── settings.json</pre>
+  </div>
+
+  <div class="insight-grid" style="margin-top:28px;">
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The mistake everyone makes</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;"><code>.claude-plugin/</code> holds <strong>only</strong> <code>plugin.json</code>. Every other directory — <code>skills/</code>, <code>agents/</code>, <code>hooks/</code>, <code>commands/</code> — must sit at the <strong>plugin root</strong>, not inside it. Nesting them there is the single most common reason a plugin doesn't load.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">The manifest is optional</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Omit <code>plugin.json</code> and Claude auto-discovers components in the default locations and takes the name from the directory. A plugin with a single <code>SKILL.md</code> at its root and no <code>skills/</code> folder loads as a one-skill plugin. Set <code>version</code> when you do use a manifest — without it, every commit counts as a new version.</p>
+    </div>
+    <div class="insight-card">
+      <div class="sec-eyebrow" style="margin-bottom:6px;">Not everything is Markdown</div>
+      <p style="font-size:15px;color:var(--slate);line-height:1.65;margin:0;">Skills, commands and agents are <code>.md</code>. Hooks, MCP servers, LSP servers, monitors and themes are <strong>JSON</strong>. If a submission puts hook logic in a markdown file, it won't run.</p>
+    </div>
+  </div>
+
+  <div class="tip-trick" style="margin-top:28px;">
+    <div class="tip-trick-icon">🔄</div>
+    <div class="tip-trick-copy">
+      <div class="tip-trick-label">Two gotchas that matter when you push an update</div>
+      <p><strong>Changes don't all land at once.</strong> An edit to a skill's <code>SKILL.md</code> takes effect immediately in the current session, but changes to <code>hooks/</code>, <code>.mcp.json</code>, <code>agents/</code> and <code>output-styles/</code> do not — members need <code>/reload-plugins</code> or a restart. Say so when you push a control change, or you'll assume a hook is live when it isn't.</p>
+      <p style="margin-top:10px;"><strong>A <code>CLAUDE.md</code> at the plugin root is ignored.</strong> It is <em>not</em> loaded as context. If you want instructions to reach Claude, they belong in a skill — this catches people who assume the plugin can carry its own standing instructions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- DESIGN -->
+<div class="section" id="design-trust">
+  <div class="sec-eyebrow">05 — Design plugins to be trusted</div>
   <h2 class="sec-title">Bundle tightly and watch what it can <em>touch</em></h2>
   <p class="sec-sub">Every connector and hook widens what a plugin can do, which is why restraint pays off before you push it to a team.</p>
 
